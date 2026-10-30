@@ -249,39 +249,90 @@ const projects: ProjectItem[] = [
 const certificates: CertificateItem[] = [
   {
     id: 1,
-    title: "Sertifikat Pemateri – Workshop Visi Komputer & YOLOv8",
-    image: "/certificates/cert-pemateri.svg"
+    title: "Dicoding x AWS – Belajar Dasar Cloud dan Generative AI di AWS",
+    image: "/certificates/real/belajar-dasar-cloud-dan-gen-ai-di-aws.jpg"
   },
   {
     id: 2,
-    title: "Certificate of Appreciation – Google Developer Groups",
-    image: "/certificates/cert-gdg.svg"
+    title: "Dicoding – Belajar Machine Learning untuk Pemula",
+    image: "/certificates/real/belajar-machine-learning-untuk-pemula.jpg"
   },
   {
     id: 3,
-    title: "Sertifikat Kompetensi – Kecerdasan Buatan & Computer Vision",
-    image: "/certificates/cert-ai.svg"
+    title: "Dicoding – Belajar Dasar Data Science",
+    image: "/certificates/real/belajar-dasar-data-science.jpg"
   },
   {
     id: 4,
-    title: "Dicoding – Menjadi Front-End Web Developer Expert",
-    image: "/certificates/cert-dicoding-frontend.svg"
+    title: "IBM Skills Network – Unleashing the Power of AI Agents",
+    image: "/certificates/real/unleashing-the-power-of-ai-agents.jpg"
   },
   {
     id: 5,
-    title: "Dicoding – Belajar Fundamental Aplikasi Web",
-    image: "/certificates/cert-dicoding-web.svg"
+    title: "IBM Skills Network – Classifying Data Using IBM Granite",
+    image: "/certificates/real/classifying-data-using-ibm-granite.jpg"
   },
   {
     id: 6,
-    title: "Dicoding – Belajar Dasar Pemrograman JavaScript",
-    image: "/certificates/cert-dicoding-js.svg"
+    title: "IBM Skills Network – Getting Started with Data",
+    image: "/certificates/real/getting-started-with-data.jpg"
+  },
+  {
+    id: 7,
+    title: "Dicoding – Memulai Pemrograman Dengan Python",
+    image: "/certificates/real/memulai-pemrograman-dengan-python.jpg"
+  },
+  {
+    id: 8,
+    title: "Dicoding – Spec-Driven Development dengan Kiro",
+    image: "/certificates/real/spec-driven-development-dengan-kiro.jpg"
+  },
+  {
+    id: 9,
+    title: "Universitas Gunadarma LePKom – Go-Lang for Beginner",
+    image: "/certificates/real/go-lang-for-beginner.jpg"
+  },
+  {
+    id: 10,
+    title: "Universitas Gunadarma LePKom – Go-Lang for Intermediate",
+    image: "/certificates/real/go-lang-for-intermediate.jpg"
+  },
+  {
+    id: 11,
+    title: "Universitas Gunadarma LePKom – Fundamental Web Programming",
+    image: "/certificates/real/fundamental-web-programming.jpg"
+  },
+  {
+    id: 12,
+    title: "Universitas Gunadarma LePKom – Basic Web Application Development",
+    image: "/certificates/real/basic-web-application-development.jpg"
+  },
+  {
+    id: 13,
+    title: "Universitas Gunadarma LePKom – Fundamental Networking",
+    image: "/certificates/real/fundamental-networking.jpg"
+  },
+  {
+    id: 14,
+    title: "Universitas Gunadarma LePKom – Local Area Network using Cisco Router",
+    image: "/certificates/real/local-area-network-using-cisco-router.jpg"
+  },
+  {
+    id: 15,
+    title: "Universitas Gunadarma LePKom – Wide Area Network using Cisco Router for Intermediate",
+    image: "/certificates/real/wide-area-network-using-cisco-router-for-intermediate.jpg"
+  },
+  {
+    id: 16,
+    title: "Universitas Gunadarma LePKom – Introduction to Wireless LAN Installation",
+    image: "/certificates/real/introduction-to-wireless-lan-installation.jpg"
   }
 ];
 
 export function Projects() {
   const [activeTab, setActiveTab] = useState<"projects" | "certificates">("projects");
   const [showAllProjects, setShowAllProjects] = useState(false);
+  const [showAllCertificates, setShowAllCertificates] = useState(false);
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
   const [previewImage, setPreviewImage] = useState<string | null>(null);
 
@@ -313,6 +364,7 @@ export function Projects() {
   }, [selectedProject, previewImage]);
 
   const displayedProjects = showAllProjects ? projects : projects.slice(0, 3);
+  const displayedCertificates = showAllCertificates ? certificates : certificates.slice(0, 6);
 
   return (
     <section id="projects" className="w-full max-w-7xl mx-auto px-6 py-24 sm:py-32">
@@ -454,37 +506,56 @@ export function Projects() {
         </>
       ) : (
         /* CERTIFICATES VIEW: Pure visual certificate cards with 'View Certificate' hover overlay */
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <AnimatePresence mode="popLayout">
-            {certificates.map((cert) => (
-              <motion.div
-                key={cert.id}
-                layout
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.3 }}
-                onClick={() => setPreviewImage(cert.image)}
-                className="group relative aspect-[1.414/1] rounded-2xl overflow-hidden bg-[#0c1222] border border-white/10 hover:border-blue-500/50 hover:shadow-[0_0_30px_rgba(37,99,235,0.25)] transition-all duration-300 cursor-pointer flex items-center justify-center shadow-lg"
-              >
-                {/* Certificate Image */}
-                <img
-                  src={cert.image}
-                  alt={cert.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
+        <>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <AnimatePresence mode="popLayout">
+              {displayedCertificates.map((cert) => (
+                <motion.div
+                  key={cert.id}
+                  layout
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.3 }}
+                  onClick={() => setPreviewImage(cert.image)}
+                  className="group relative aspect-[1.414/1] rounded-2xl overflow-hidden bg-white border border-white/20 hover:border-blue-400 hover:shadow-[0_0_30px_rgba(37,99,235,0.3)] transition-all duration-300 cursor-pointer flex items-center justify-center shadow-lg"
+                >
+                  {/* Certificate Image */}
+                  <div className="w-full h-full flex items-center justify-center p-2 bg-white select-none">
+                    <img
+                      src={cert.image}
+                      alt={cert.title}
+                      loading="lazy"
+                      className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
 
-                {/* Hover Overlay with Arrow and 'View Certificate' */}
-                <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center select-none">
-                  <ArrowUpRight className="w-10 h-10 text-white mb-1.5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
-                  <span className="text-white font-bold text-base sm:text-lg tracking-wide drop-shadow-md">
-                    View Certificate
-                  </span>
-                </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </div>
+                  {/* Hover Overlay with Arrow and 'View Certificate' matching reference image */}
+                  <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center select-none z-10">
+                    <ArrowUpRight className="w-9 h-9 sm:w-10 sm:h-10 text-white mb-2 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                    <span className="text-white font-bold text-base sm:text-lg tracking-wide drop-shadow-md">
+                      View Certificate
+                    </span>
+                  </div>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </div>
+
+          {/* Show More Button for Certificates */}
+          {certificates.length > 6 && (
+            <div className="mt-12 flex justify-center">
+              <button
+                onClick={() => setShowAllCertificates(!showAllCertificates)}
+                className="px-6 py-2.5 rounded-full bg-[#111c38] hover:bg-blue-900/50 text-blue-300 border border-blue-500/20 text-sm font-bold transition-all hover:shadow-[0_0_15px_rgba(29,78,216,0.3)]"
+              >
+                {showAllCertificates
+                  ? "Tampilkan Lebih Sedikit"
+                  : `Tampilkan Semua Sertifikat (${certificates.length})`}
+              </button>
+            </div>
+          )}
+        </>
       )}
 
       {/* Detailed Project Overview Modal */}
