@@ -1,54 +1,71 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { FileText, Code } from "lucide-react";
 
-// Cinematic smooth cross-fade dissolve between normal photo and Spider-Man photo with a relaxed pause
+// Interactive Profile: Features both automatic cinematic cross-fade AND cursor flashlight spill reveal on hover
 function InteractiveProfile() {
-  const [showSpiderman, setShowSpiderman] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [maskPos, setMaskPos] = useState({ x: -1000, y: -1000 });
   const [isHovered, setIsHovered] = useState(false);
+  const [showSpiderman, setShowSpiderman] = useState(false);
 
+  // Automatic gentle dissolve when not hovering
   useEffect(() => {
-    // 4-second cycle with 1.2s luxurious dissolve + ~2.8s resting pause
+    if (isHovered) return; // Pause automatic cycle while user is interacting with cursor spill
+
     const interval = setInterval(() => {
       setShowSpiderman((prev) => !prev);
-    }, 4000);
+    }, 3800);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isHovered]);
 
-  const activeSpiderman = isHovered || showSpiderman;
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!containerRef.current) return;
+    const rect = containerRef.current.getBoundingClientRect();
+    setMaskPos({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    setMaskPos({ x: -1000, y: -1000 });
+  };
 
   return (
     <div
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      className="w-[300px] h-[350px] sm:w-[380px] sm:h-[450px] lg:w-[420px] lg:h-[500px] relative rounded-none overflow-hidden select-none cursor-pointer"
+      ref={containerRef}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className={`w-[300px] h-[350px] sm:w-[380px] sm:h-[450px] lg:w-[420px] lg:h-[500px] relative rounded-none overflow-hidden select-none ${
+        isHovered ? "cursor-none" : "cursor-pointer"
+      }`}
     >
       {/* Base Normal Photo */}
-      <motion.div
-        className="absolute inset-0 w-full h-full will-change-[opacity]"
-        initial={false}
-        animate={{ opacity: activeSpiderman ? 0 : 1 }}
-        transition={{ duration: 1.2, ease: [0.4, 0, 0.2, 1] }}
-      >
+      <div className="absolute inset-0 w-full h-full pointer-events-none">
         <Image
           src="/profile.png"
           alt="Zidni Khaerur Rizqia"
           fill
           priority
           sizes="(max-width: 768px) 380px, 420px"
-          className="object-cover object-top"
+          className="object-cover object-top grayscale-[15%] group-hover:grayscale-0 transition-all duration-700"
         />
-      </motion.div>
+      </div>
 
-      {/* Spider-Man Easter Egg Photo (Cinematic Cross-fade) */}
+      {/* Automatic Cross-fade Layer (Active when NOT hovering with cursor) */}
       <motion.div
-        className="absolute inset-0 w-full h-full will-change-[opacity]"
+        className="absolute inset-0 w-full h-full will-change-[opacity] pointer-events-none"
         initial={false}
-        animate={{ opacity: activeSpiderman ? 1 : 0 }}
+        animate={{
+          opacity: !isHovered && showSpiderman ? 1 : 0,
+        }}
         transition={{ duration: 1.2, ease: [0.4, 0, 0.2, 1] }}
       >
         <Image
@@ -60,6 +77,37 @@ function InteractiveProfile() {
           className="object-cover object-top"
         />
       </motion.div>
+
+      {/* Interactive Cursor Radial Mask Spill Layer (Active on HOVER: 'ke-spill saat kursor ke foto') */}
+      <div
+        className="absolute inset-0 pointer-events-none z-20 transition-opacity duration-200"
+        style={{
+          WebkitMaskImage: `radial-gradient(135px at ${maskPos.x}px ${maskPos.y}px, black 65%, transparent 100%)`,
+          maskImage: `radial-gradient(135px at ${maskPos.x}px ${maskPos.y}px, black 65%, transparent 100%)`,
+          WebkitMaskRepeat: "no-repeat",
+          maskRepeat: "no-repeat",
+          opacity: isHovered ? 1 : 0,
+        }}
+      >
+        <Image
+          src="/PhotoSpiderman.png"
+          alt="Spider-Man Spill Reveal"
+          fill
+          priority
+          sizes="(max-width: 768px) 380px, 420px"
+          className="object-cover object-top"
+        />
+      </div>
+
+      {/* Mouse Cursor Tracking Indicator Dot */}
+      <div
+        className="absolute w-3.5 h-3.5 rounded-full pointer-events-none z-50 mix-blend-difference bg-white -translate-x-1/2 -translate-y-1/2 transition-opacity duration-150 shadow-[0_0_8px_#fff]"
+        style={{
+          left: `${maskPos.x}px`,
+          top: `${maskPos.y}px`,
+          opacity: isHovered ? 1 : 0,
+        }}
+      />
     </div>
   );
 }
