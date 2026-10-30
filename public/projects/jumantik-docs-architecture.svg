@@ -1,0 +1,92 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 580' width='100%' height='100%'>
+  <defs>
+    <linearGradient id='bg' x1='0%' y1='0%' x2='100%' y2='100%'>
+      <stop offset='0%' stop-color='#0a1020'/>
+      <stop offset='100%' stop-color='#060a14'/>
+    </linearGradient>
+    <linearGradient id='accentGrad' x1='0%' y1='0%' x2='100%' y2='0%'>
+      <stop offset='0%' stop-color='#2563eb'/>
+      <stop offset='100%' stop-color='#06b6d4'/>
+    </linearGradient>
+  </defs>
+
+  <rect width='900' height='580' fill='url(#bg)' rx='16'/>
+  <rect x='16' y='16' width='868' height='548' fill='none' stroke='#1e293b' stroke-width='1.5' rx='12'/>
+
+  <!-- Header -->
+  <g transform='translate(45, 45)'>
+    <rect x='0' y='0' width='180' height='26' rx='13' fill='#1e3a8a' opacity='0.6'/>
+    <text x='90' y='17' font-family='sans-serif' font-size='11' font-weight='700' fill='#60a5fa' text-anchor='middle'>PPPL COMPUTING PROJECT</text>
+    <text x='0' y='55' font-family='sans-serif' font-size='22' font-weight='900' fill='#ffffff'>Sistem Informasi Jumantik Kelurahan Malaka Sari</text>
+    <text x='0' y='75' font-family='sans-serif' font-size='13' font-weight='600' fill='#94a3b8'>Software Engineering Documentation &amp; Architecture Map</text>
+  </g>
+
+  <!-- 3 Column Architecture Cards -->
+  <!-- Col 1: Requirements & Analysis (SRS) -->
+  <g transform='translate(45, 145)'>
+    <rect x='0' y='0' width='255' height='260' rx='14' fill='#0f192f' stroke='#2563eb' stroke-width='1.5'/>
+    <rect x='15' y='15' width='36' height='36' rx='8' fill='#1e3a8a'/>
+    <text x='33' y='38' font-family='sans-serif' font-size='18' font-weight='900' fill='#60a5fa' text-anchor='middle'>1</text>
+    <text x='62' y='32' font-family='sans-serif' font-size='14' font-weight='800' fill='#ffffff'>Requirements (SRS)</text>
+    <text x='62' y='46' font-family='sans-serif' font-size='10' font-weight='600' fill='#60a5fa'>Spesifikasi Kebutuhan</text>
+    
+    <line x1='15' y1='65' x2='240' y2='65' stroke='#1e293b'/>
+    
+    <text x='15' y='90' font-family='sans-serif' font-size='11' fill='#cbd5e1'>• WBS &amp; Project Schedule Plan</text>
+    <text x='15' y='115' font-family='sans-serif' font-size='11' fill='#cbd5e1'>• Use Case Diagrams &amp; Specs</text>
+    <text x='15' y='140' font-family='sans-serif' font-size='11' fill='#cbd5e1'>• Minutes of Meeting (MoM) Klien</text>
+    <text x='15' y='165' font-family='sans-serif' font-size='11' fill='#cbd5e1'>• Sequence &amp; Activity Diagrams</text>
+    <text x='15' y='190' font-family='sans-serif' font-size='11' fill='#cbd5e1'>• Analisis Kebutuhan Kader &amp; RT</text>
+    <text x='15' y='215' font-family='sans-serif' font-size='11' fill='#cbd5e1'>• Multi-role Authorization Spec</text>
+  </g>
+
+  <!-- Col 2: System & AI Design (SDD) -->
+  <g transform='translate(322, 145)'>
+    <rect x='0' y='0' width='255' height='260' rx='14' fill='#0f192f' stroke='#06b6d4' stroke-width='1.5'/>
+    <rect x='15' y='15' width='36' height='36' rx='8' fill='#0e7490'/>
+    <text x='33' y='38' font-family='sans-serif' font-size='18' font-weight='900' fill='#67e8f9' text-anchor='middle'>2</text>
+    <text x='62' y='32' font-family='sans-serif' font-size='14' font-weight='800' fill='#ffffff'>Software Design (SDD)</text>
+    <text x='62' y='46' font-family='sans-serif' font-size='10' font-weight='600' fill='#67e8f9'>Desain &amp; Arsitektur Sistem</text>
+    
+    <line x1='15' y1='65' x2='240' y2='65' stroke='#1e293b'/>
+    
+    <text x='15' y='90' font-family='sans-serif' font-size='11' fill='#cbd5e1'>• Database Schema &amp; ERD Model</text>
+    <text x='15' y='115' font-family='sans-serif' font-size='11' fill='#cbd5e1'>• UI/UX Prototype Iterasi 1 &amp; 2</text>
+    <text x='15' y='140' font-family='sans-serif' font-size='11' fill='#cbd5e1'>• Integrasi AI Chatbot Konsultasi</text>
+    <text x='15' y='165' font-family='sans-serif' font-size='11' fill='#cbd5e1'>• Modul Geotagging &amp; GPS Camera</text>
+    <text x='15' y='190' font-family='sans-serif' font-size='11' fill='#cbd5e1'>• Physical Architecture Design</text>
+    <text x='15' y='215' font-family='sans-serif' font-size='11' fill='#cbd5e1'>• Format Surat RT ke Kelurahan</text>
+  </g>
+
+  <!-- Col 3: Testing & User Manual -->
+  <g transform='translate(600, 145)'>
+    <rect x='0' y='0' width='255' height='260' rx='14' fill='#0f192f' stroke='#10b981' stroke-width='1.5'/>
+    <rect x='15' y='15' width='36' height='36' rx='8' fill='#065f46'/>
+    <text x='33' y='38' font-family='sans-serif' font-size='18' font-weight='900' fill='#6ee7b7' text-anchor='middle'>3</text>
+    <text x='62' y='32' font-family='sans-serif' font-size='14' font-weight='800' fill='#ffffff'>Testing &amp; Manual</text>
+    <text x='62' y='46' font-family='sans-serif' font-size='10' font-weight='600' fill='#6ee7b7'>Validasi &amp; Dokumentasi</text>
+    
+    <line x1='15' y1='65' x2='240' y2='65' stroke='#1e293b'/>
+    
+    <text x='15' y='90' font-family='sans-serif' font-size='11' fill='#cbd5e1'>• Test Plan (Unit &amp; Integration)</text>
+    <text x='15' y='115' font-family='sans-serif' font-size='11' fill='#cbd5e1'>• Lembar Kerja Test Cases</text>
+    <text x='15' y='140' font-family='sans-serif' font-size='11' fill='#cbd5e1'>• Live Demo &amp; Code Review Dosen</text>
+    <text x='15' y='165' font-family='sans-serif' font-size='11' fill='#cbd5e1'>• User Manual Panduan Kader</text>
+    <text x='15' y='190' font-family='sans-serif' font-size='11' fill='#cbd5e1'>• Deployment &amp; Installation Guide</text>
+    <text x='15' y='215' font-family='sans-serif' font-size='11' fill='#cbd5e1'>• Lessons Learned &amp; Evaluation</text>
+  </g>
+
+  <!-- Bottom Highlight Bar: Technical Writer Role -->
+  <g transform='translate(45, 435)'>
+    <rect x='0' y='0' width='810' height='90' rx='14' fill='#131f37' stroke='#334155' stroke-width='1'/>
+    <g transform='translate(25, 25)'>
+      <rect x='0' y='0' width='140' height='22' rx='6' fill='#2563eb'/>
+      <text x='70' y='15' font-family='sans-serif' font-size='10' font-weight='800' fill='#ffffff' text-anchor='middle'>PERAN SAYA</text>
+      <text x='0' y='46' font-family='sans-serif' font-size='15' font-weight='800' fill='#38bdf8'>Technical Writer &amp; Documentation Specialist</text>
+    </g>
+    <g transform='translate(240, 22)'>
+      <text x='0' y='18' font-family='sans-serif' font-size='12' fill='#94a3b8'>Institusi Klien: <tspan fill='#ffffff' font-weight='700'>Kelurahan Malaka Sari, Duren Sawit, Jakarta Timur</tspan></text>
+      <text x='0' y='38' font-family='sans-serif' font-size='12' fill='#94a3b8'>Mata Kuliah: <tspan fill='#ffffff' font-weight='700'>Pengelolaan Proyek Perangkat Lunak (IT045341) - Universitas Gunadarma</tspan></text>
+    </g>
+  </g>
+</svg>

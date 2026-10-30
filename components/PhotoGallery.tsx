@@ -7,10 +7,10 @@ import { cn } from "@/lib/utils";
 const galleryPhotos = [
   { id: 1, src: "/projects/skripsi-annotated-video.png", title: "Automated Vehicle Tracking", subtitle: "YOLOv8 + Deep SORT Pipeline" },
   { id: 2, src: "/projects/pi-masjo-thumb.png", title: "Mie Ayam Mas Jo Website", subtitle: "Pemesanan & Poin Loyalitas" },
-  { id: 3, src: "/projects/skripsi-tracking-system.png", title: "Directional Line Crossing", subtitle: "Antarmuka Flask & Live Counter" },
+  { id: 3, src: "/projects/jumantik-preview.png", title: "Sistem Informasi Jumantik", subtitle: "Geotagging & AI Assistant Kelurahan" },
   { id: 4, src: "/projects/pi-masjo-admin-dashboard.png", title: "Admin Management & Reports", subtitle: "Rekapitulasi Penjualan UMKM" },
-  { id: 5, src: "/projects/skripsi-line-setup.png", title: "Interactive Line Calibration", subtitle: "Kanvas Penentuan Garis Hitung" },
-  { id: 6, src: "/projects/pi-masjo-points.png", title: "Program Reward Poin", subtitle: "Customer Retention Engineering" },
+  { id: 5, src: "/projects/skripsi-tracking-system.png", title: "Directional Line Crossing", subtitle: "Antarmuka Flask & Live Counter" },
+  { id: 6, src: "/projects/jumantik-docs-architecture.svg", title: "Software Architecture Map", subtitle: "Technical Documentation (SRS, SDD)" },
 ];
 
 export function PhotoGallery() {

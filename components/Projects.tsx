@@ -32,6 +32,8 @@ interface ProjectItem {
   tags: string[];
   image: string;
   link?: string;
+  repoLink?: string;
+  docsLink?: string;
   academicMeta?: {
     type: string;
     institution: string;
@@ -170,6 +172,56 @@ const projects: ProjectItem[] = [
   },
   {
     id: 3,
+    title: "Sistem Informasi Jumantik & AI Assistant (Kelurahan Malaka Sari)",
+    fullTitle:
+      "Pengembangan Sistem Informasi Pemantauan Jentik (Jumantik) Berbasis Web & AI – Kelurahan Malaka Sari",
+    category: "Team Project (Technical Writer)",
+    description:
+      "Sistem pemantauan jentik DBD berbasis web dengan geotagging GPS dan AI Chatbot interaktif untuk Kelurahan Malaka Sari. Bertanggung jawab penuh sebagai Technical Writer dalam perancangan spesifikasi perangkat lunak (SRS, SDD, Testing & User Manual).",
+    tags: [
+      "Technical Writer",
+      "Software Documentation",
+      "SRS & SDD",
+      "React + Vite",
+      "AI Chatbot",
+      "UML Modeling",
+      "Team Project"
+    ],
+    image: "/projects/jumantik-preview.png",
+    repoLink: "https://github.com/Lutfi1412/JumantikMalakaSari.git",
+    docsLink: "https://drive.google.com/drive/folders/1uZr9e4iEFnoDT7fEenRDtDR6sMessnu-?usp=drive_link",
+    academicMeta: {
+      type: "Team Computing Project (PPPL IT045341)",
+      institution: "Universitas Gunadarma & Kelurahan Malaka Sari",
+      year: "2025",
+      advisor: "Dosen Pengampu PPPL",
+      scoreOrAccuracy: "Peran: Technical Writer & Doc Lead"
+    },
+    overview:
+      "Proyek perangkat lunak tim skala instansi pemerintahan yang dikembangkan selama satu semester untuk klien resmi Kelurahan Malaka Sari (Duren Sawit, Jakarta Timur) sesuai kurikulum mata kuliah Pengelolaan Proyek Perangkat Lunak (PPPL). Sistem ini dirancang untuk mendigitalkan proses pemantauan sarang nyamuk DBD oleh kader Jumantik secara real-time dengan verifikasi geotagging lokasi GPS, rekapitulasi surat laporan berjenjang (Kader -> RT -> RW -> Kelurahan), serta asisten AI interaktif untuk konsultasi pencegahan demam berdarah.",
+    methodology:
+      "System Development Life Cycle (SDLC) terstruktur dengan kolaborasi lintas divisi (Project Manager, Software Analyst, Software Designer, Programmer, Tester, Technical Writer). Sebagai Technical Writer, saya memimpin standarisasi seluruh dokumen luaran perangkat lunak (Software & User Documentation) sesuai standar IEEE/PMBOK.",
+    features: [
+      "Penyusunan Software Requirement Specification (SRS): use case specifications, sequence diagrams, class diagrams, dan kamus data sistem.",
+      "Penyusunan Software Design Document (SDD): desain skema basis data, arsitektur fisik, dan rancangan antarmuka pengguna iteratif.",
+      "Penyusunan dokumen pengujian (Test Plan, skenario Unit & Integration Testing, serta lembar kerja uji coba).",
+      "Penyusunan User Manual & Installation Manual yang komunikatif bagi kader Jumantik dan petugas kelurahan.",
+      "Penyusunan Minutes of Meeting (MoM) berkala dengan stakeholder dan klien Kelurahan Malaka Sari.",
+      "Fitur AI Assistant / Chatbot interaktif untuk konsultasi masyarakat dan edukasi pencegahan DBD."
+    ],
+    gallery: [
+      {
+        src: "/projects/jumantik-preview.png",
+        caption: "Mockup Antarmuka Web Dashboard & Aplikasi Mobile Pelaporan Geotagging Jumantik Malaka Sari"
+      },
+      {
+        src: "/projects/jumantik-docs-architecture.svg",
+        caption: "Peta Arsitektur Rekayasa Perangkat Lunak & Deliverables Technical Documentation (SRS, SDD, Test Plan, Manual)"
+      }
+    ]
+  },
+  {
+    id: 4,
     title: "Modern Frontend & Containerization Practice",
     fullTitle: "Modern Frontend Engineering & Containerized Micro-services Practice",
     category: "Frontend & Cloud Engineering",
@@ -190,30 +242,6 @@ const projects: ProjectItem[] = [
       "Automasi container berbasis Dockerfile multi-stage build untuk image yang ringan.",
       "Penerapan utility-first styling menggunakan Tailwind CSS dengan dukungan dark/light theme.",
       "Manajemen source control dengan konvensi semantic commit dan branching yang rapi."
-    ]
-  },
-  {
-    id: 4,
-    title: "Interactive Personal Portfolio & Digital Identity",
-    fullTitle: "Interactive 3D Portfolio & Digital Identity System",
-    category: "Creative Frontend & UI/UX",
-    description:
-      "Website portfolio personal interaktif berteknologi Next.js, Framer Motion, 3D coverflow visual gallery, dan fisika lanyard interaktif yang dirancang dengan estetika modern anti-slop.",
-    tags: ["Next.js 15", "React 19", "Framer Motion", "Tailwind CSS", "TypeScript"],
-    image: "/profile.png",
-    academicMeta: {
-      type: "Personal Identity System",
-      institution: "Web Engineering Showcase",
-      year: "2026",
-      scoreOrAccuracy: "Lighthouse 100 Performance Score"
-    },
-    overview:
-      "Platform representasi digital personal yang menggabungkan estetika desain tingkat tinggi, performa render statis Next.js 15, animasi mikro berbasis GSAP & Framer Motion, serta interaktivitas responsif.",
-    features: [
-      "Animasi interaktif kartu ID lanyard dengan simulasi fisika drag and swing.",
-      "Coverflow 3D gallery untuk visualisasi karya akademik dan profesional.",
-      "Desain adaptif mobile-first dengan kontras visual terkalibrasi dan tipografi modern.",
-      "Deployment terintegrasi Vercel dengan optimasi aset gambar Next.js."
     ]
   }
 ];
@@ -419,7 +447,7 @@ export function Projects() {
                 onClick={() => setShowAllProjects(!showAllProjects)}
                 className="px-6 py-2.5 rounded-full bg-[#111c38] hover:bg-blue-900/50 text-blue-300 border border-blue-500/20 text-sm font-bold transition-all hover:shadow-[0_0_15px_rgba(29,78,216,0.3)]"
               >
-                {showAllProjects ? "Tampilkan Lebih Sedikit" : "Tampilkan Lainnya"}
+                {showAllProjects ? "Tampilkan Lebih Sedikit" : "Tampilkan Lainnya (Semua Karya)"}
               </button>
             </div>
           )}
@@ -522,7 +550,7 @@ export function Projects() {
                 {selectedProject.academicMeta && (
                   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
                     <div className="p-3.5 rounded-xl bg-white/5 border border-white/10">
-                      <span className="text-xs text-neutral-400 block mb-1">Gelar & Program</span>
+                      <span className="text-xs text-neutral-400 block mb-1">Program & Sifat Proyek</span>
                       <span className="text-sm font-semibold text-white flex items-center gap-2">
                         <BookOpen className="w-4 h-4 text-blue-400" />
                         {selectedProject.academicMeta.type}
@@ -530,7 +558,7 @@ export function Projects() {
                     </div>
 
                     <div className="p-3.5 rounded-xl bg-white/5 border border-white/10">
-                      <span className="text-xs text-neutral-400 block mb-1">Institusi</span>
+                      <span className="text-xs text-neutral-400 block mb-1">Institusi / Klien</span>
                       <span className="text-sm font-semibold text-white flex items-center gap-2">
                         <MapPin className="w-4 h-4 text-emerald-400" />
                         {selectedProject.academicMeta.institution}
@@ -538,12 +566,42 @@ export function Projects() {
                     </div>
 
                     <div className="p-3.5 rounded-xl bg-white/5 border border-white/10">
-                      <span className="text-xs text-neutral-400 block mb-1">Capaian / Metrik</span>
+                      <span className="text-xs text-neutral-400 block mb-1">Peran / Capaian</span>
                       <span className="text-sm font-semibold text-white flex items-center gap-2">
                         <Award className="w-4 h-4 text-yellow-400" />
                         {selectedProject.academicMeta.scoreOrAccuracy}
                       </span>
                     </div>
+                  </div>
+                )}
+
+                {/* Resource Links (GitHub Repo & Google Drive Documentation) if available */}
+                {(selectedProject.repoLink || selectedProject.docsLink) && (
+                  <div className="flex flex-wrap gap-3 p-4 rounded-2xl bg-blue-500/5 border border-blue-500/20">
+                    {selectedProject.repoLink && (
+                      <a
+                        href={selectedProject.repoLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/15 text-white text-xs sm:text-sm font-semibold border border-white/15 transition-all hover:scale-102"
+                      >
+                        <Code2 className="w-4 h-4 text-blue-400" />
+                        Repositori GitHub Tim
+                        <ExternalLink className="w-3.5 h-3.5 text-neutral-400" />
+                      </a>
+                    )}
+                    {selectedProject.docsLink && (
+                      <a
+                        href={selectedProject.docsLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-blue-600/30 hover:bg-blue-600/40 text-blue-300 text-xs sm:text-sm font-semibold border border-blue-500/30 transition-all hover:scale-102"
+                      >
+                        <BookOpen className="w-4 h-4 text-blue-400" />
+                        Dokumentasi Lengkap (Google Drive)
+                        <ExternalLink className="w-3.5 h-3.5 text-blue-400" />
+                      </a>
+                    )}
                   </div>
                 )}
 
@@ -564,21 +622,21 @@ export function Projects() {
                   </div>
                 </div>
 
-                {/* Section: Abstrak / Ringkasan Penelitian */}
+                {/* Section: Ringkasan Proyek */}
                 <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/10 space-y-3">
                   <h4 className="text-base font-bold text-white flex items-center gap-2">
-                    <BookOpen className="w-4 h-4 text-blue-400" /> Ringkasan & Abstrak Resmi
+                    <BookOpen className="w-4 h-4 text-blue-400" /> Ringkasan & Deskripsi Proyek
                   </h4>
                   <p className="text-sm sm:text-base text-neutral-300 leading-relaxed text-justify">
                     {selectedProject.overview || selectedProject.description}
                   </p>
                 </div>
 
-                {/* Section: Metodologi Penelitian jika ada */}
+                {/* Section: Metodologi & Alur */}
                 {selectedProject.methodology && (
                   <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/10 space-y-3">
                     <h4 className="text-base font-bold text-white flex items-center gap-2">
-                      <Layers className="w-4 h-4 text-purple-400" /> Metodologi & Alur Pengembangan
+                      <Layers className="w-4 h-4 text-purple-400" /> Metodologi & Tanggung Jawab Peran
                     </h4>
                     <p className="text-sm sm:text-base text-neutral-300 leading-relaxed">
                       {selectedProject.methodology}
@@ -590,7 +648,7 @@ export function Projects() {
                 {selectedProject.features && (
                   <div>
                     <h4 className="text-base font-bold text-white mb-4 flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-400" /> Fitur Kunci & Kontribusi Teknis
+                      <CheckCircle2 className="w-4 h-4 text-emerald-400" /> Deliverables & Kontribusi Teknis Utama
                     </h4>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                       {selectedProject.features.map((feat, i) => (
