@@ -5,12 +5,12 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const galleryPhotos = [
-  { id: 1, src: "/project-food.jpg", title: "Mie Ayam Mas Jo Website", subtitle: "Food Ordering & Loyalty System" },
-  { id: 2, src: "/project-cv.jpg", title: "Automated Vehicle Tracking", subtitle: "YOLOv8 + Deep SORT Pipeline" },
-  { id: 3, src: "/project-frontend.jpg", title: "Frontend & Containers", subtitle: "React + TS + Docker Practice" },
-  { id: 4, src: "/profile.png", title: "Academic Foundations", subtitle: "Universitas Gunadarma" },
-  { id: 5, src: "/project-food.jpg", title: "Customer Loyalty Workflow", subtitle: "Applied Web Engineering" },
-  { id: 6, src: "/project-cv.jpg", title: "Traffic Line-Crossing", subtitle: "OpenCV Object Counting" },
+  { id: 1, src: "/projects/skripsi-annotated-video.png", title: "Automated Vehicle Tracking", subtitle: "YOLOv8 + Deep SORT Pipeline" },
+  { id: 2, src: "/projects/pi-masjo-thumb.png", title: "Mie Ayam Mas Jo Website", subtitle: "Pemesanan & Poin Loyalitas" },
+  { id: 3, src: "/projects/skripsi-tracking-system.png", title: "Directional Line Crossing", subtitle: "Antarmuka Flask & Live Counter" },
+  { id: 4, src: "/projects/pi-masjo-admin-dashboard.png", title: "Admin Management & Reports", subtitle: "Rekapitulasi Penjualan UMKM" },
+  { id: 5, src: "/projects/skripsi-line-setup.png", title: "Interactive Line Calibration", subtitle: "Kanvas Penentuan Garis Hitung" },
+  { id: 6, src: "/projects/pi-masjo-points.png", title: "Program Reward Poin", subtitle: "Customer Retention Engineering" },
 ];
 
 export function PhotoGallery() {
