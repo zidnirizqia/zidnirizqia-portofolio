@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useRef, useState, useEffect, useCallback, useLayoutEffect } from "react";
+import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -226,13 +227,16 @@ export function PhotoGallery() {
                 style={{ width: "var(--cf-card)" }}
                 onClick={() => animateTo(idx)}
               >
-                <img
+                <Image
                   src={slide.src}
                   alt={slide.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 420px"
+                  loading="lazy"
                   draggable={false}
                   className="h-full w-full select-none object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-5 flex flex-col justify-end">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-5 flex flex-col justify-end z-10 pointer-events-none">
                   <h4 className="text-base sm:text-lg font-bold text-white leading-snug">
                     {slide.title}
                   </h4>

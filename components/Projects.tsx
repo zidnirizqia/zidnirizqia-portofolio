@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ExternalLink,
@@ -422,16 +423,16 @@ export function Projects() {
                     className="h-52 overflow-hidden bg-neutral-900 relative cursor-pointer"
                     onClick={() => setSelectedProject(item)}
                   >
-                    <img
+                    <Image
                       src={item.image}
                       alt={item.title}
-                      className="w-full h-full object-cover object-top opacity-90 group-hover:opacity-100 transition-all duration-500 group-hover:scale-105"
-                      onError={(e) => {
-                        (e.target as HTMLElement).style.opacity = "0.2";
-                      }}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      loading="lazy"
+                      className="object-cover object-top opacity-90 group-hover:opacity-100 transition-all duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f1d] via-transparent to-transparent opacity-80" />
-                    <span className="absolute bottom-3 right-3 px-2.5 py-1 rounded-lg bg-black/60 backdrop-blur-md text-xs text-white/90 border border-white/10 flex items-center gap-1 font-medium">
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f1d] via-transparent to-transparent opacity-80 pointer-events-none" />
+                    <span className="absolute bottom-3 right-3 px-2.5 py-1 rounded-lg bg-black/60 backdrop-blur-md text-xs text-white/90 border border-white/10 flex items-center gap-1 font-medium z-10">
                       <ImageIcon className="w-3 h-3 text-blue-400" /> Lihat Detail
                     </span>
                   </div>
@@ -521,12 +522,14 @@ export function Projects() {
                   className="group relative aspect-[1.414/1] rounded-2xl overflow-hidden bg-white border border-white/20 hover:border-blue-400 hover:shadow-[0_0_30px_rgba(37,99,235,0.3)] transition-all duration-300 cursor-pointer flex items-center justify-center shadow-lg"
                 >
                   {/* Certificate Image */}
-                  <div className="w-full h-full flex items-center justify-center p-2 bg-white select-none">
-                    <img
+                  <div className="relative w-full h-full flex items-center justify-center p-2 bg-white select-none">
+                    <Image
                       src={cert.image}
                       alt={cert.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       loading="lazy"
-                      className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                      className="object-contain p-2 transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
 
@@ -752,11 +755,14 @@ export function Projects() {
                           onClick={() => setPreviewImage(img.src)}
                           className="group relative rounded-xl overflow-hidden border border-white/10 bg-neutral-900 cursor-pointer hover:border-blue-400/50 transition-all"
                         >
-                          <div className="aspect-video overflow-hidden">
-                            <img
+                          <div className="aspect-video overflow-hidden relative">
+                            <Image
                               src={img.src}
                               alt={img.caption}
-                              className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                              fill
+                              sizes="(max-width: 768px) 100vw, 50vw"
+                              loading="lazy"
+                              className="object-cover object-top group-hover:scale-105 transition-transform duration-300"
                             />
                           </div>
                           <div className="p-3 bg-black/60 backdrop-blur-sm border-t border-white/5">

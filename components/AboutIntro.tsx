@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useRef, useState } from "react";
+import Image from "next/image";
 import { FileText, Code } from "lucide-react";
 
 // Ported from clone v3 (About intro block). Hover reveals the Spider-Man photo through a radial mask.
@@ -32,10 +33,13 @@ function InteractiveProfile() {
       className="w-[300px] h-[350px] sm:w-[380px] sm:h-[450px] lg:w-[420px] lg:h-[500px] cursor-none relative rounded-none overflow-hidden group select-none"
     >
       {/* Base Normal Photo */}
-      <img
+      <Image
         src="/profile.png"
         alt="Zidni Khaerur Rizqia"
-        className="absolute inset-0 w-full h-full object-cover object-top grayscale-[15%] group-hover:grayscale-0 transition-all duration-700 pointer-events-none"
+        fill
+        priority
+        sizes="(max-width: 768px) 380px, 420px"
+        className="object-cover object-top grayscale-[15%] group-hover:grayscale-0 transition-all duration-700 pointer-events-none"
       />
 
       {/* Spider-man Easter Egg Reveal on Hover Mask */}
@@ -49,10 +53,13 @@ function InteractiveProfile() {
           opacity: isHovered ? 1 : 0,
         }}
       >
-        <img
+        <Image
           src="/PhotoSpiderman.png"
           alt="Reveal Easter Egg"
-          className="w-full h-full object-cover object-top"
+          fill
+          loading="lazy"
+          sizes="(max-width: 768px) 380px, 420px"
+          className="object-cover object-top"
         />
       </div>
 
