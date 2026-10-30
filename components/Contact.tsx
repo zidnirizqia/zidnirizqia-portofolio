@@ -22,8 +22,8 @@ export function Contact() {
       formData.contact ? ` (Kontak/Email: ${formData.contact})` : ""
     }`;
 
-    // Target phone number template
-    const waUrl = `https://wa.me/6281234567890?text=${encodeURIComponent(
+    // Target phone number: +62 817-7913-3277
+    const waUrl = `https://wa.me/6281779133277?text=${encodeURIComponent(
       whatsappMessage
     )}`;
 
@@ -76,7 +76,7 @@ export function Contact() {
 
             <div className="space-y-5">
               <a
-                href="mailto:zidnikhaerur@gmail.com"
+                href="mailto:zidnikhaerurrizqia9@gmail.com"
                 className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-all group"
               >
                 <div className="w-12 h-12 rounded-2xl glass-panel border border-foreground/10 flex items-center justify-center group-hover:scale-110 group-hover:border-primary/40 transition-all shadow-sm">
@@ -85,7 +85,7 @@ export function Contact() {
                 <div>
                   <span className="text-xs text-muted-foreground block">Email</span>
                   <span className="font-semibold text-foreground text-sm sm:text-base">
-                    zidnikhaerur@gmail.com
+                    zidnikhaerurrizqia9@gmail.com
                   </span>
                 </div>
               </a>
@@ -103,7 +103,7 @@ export function Contact() {
               </div>
 
               <a
-                href="https://wa.me/6281234567890"
+                href="https://wa.me/6281779133277"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-all group"
@@ -114,7 +114,7 @@ export function Contact() {
                 <div>
                   <span className="text-xs text-muted-foreground block">Direct Chat</span>
                   <span className="font-semibold text-foreground text-sm sm:text-base">
-                    WhatsApp Message
+                    +62 817-7913-3277
                   </span>
                 </div>
               </a>

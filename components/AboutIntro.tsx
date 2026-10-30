@@ -113,7 +113,7 @@ function InteractiveProfile() {
 }
 
 const resumeHref =
-  "mailto:zidnikhaerur@gmail.com?subject=Resume%20Request%20-%20Zidni%20Khaerur%20Rizqia";
+  "mailto:zidnikhaerurrizqia9@gmail.com?subject=Resume%20Request%20-%20Zidni%20Khaerur%20Rizqia";
 
 export function AboutIntro() {
   const scrollToProjects = (e: React.MouseEvent) => {

@@ -23,10 +23,10 @@ export function Hero() {
   };
 
   const socialLinks = [
-    { icon: Github, href: "https://github.com", label: "GitHub" },
-    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-    { icon: Mail, href: "mailto:zidnikhaerur@gmail.com", label: "Email" },
-    { icon: MessageSquare, href: "https://wa.me/628xxxxxxxxxx", label: "WhatsApp" },
+    { icon: Github, href: "https://github.com/zidnirizqia", label: "GitHub" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/zidnirizqia", label: "LinkedIn" },
+    { icon: Mail, href: "mailto:zidnikhaerurrizqia9@gmail.com", label: "Email" },
+    { icon: MessageSquare, href: "https://wa.me/6281779133277", label: "WhatsApp" },
   ];
 
   return (
