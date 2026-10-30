@@ -51,7 +51,13 @@ export function Contact() {
 
         <div className="relative z-10 flex flex-col md:flex-row gap-12 md:gap-20">
           {/* Left Column: Direct Contact Details */}
-          <div className="flex-1 space-y-8">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            className="flex-1 space-y-8"
+          >
             <div>
               <span className="text-xs font-extrabold uppercase tracking-widest text-primary mb-3 bg-primary/10 px-4 py-1.5 rounded-full border border-primary/20 inline-block shadow-sm">
                 Get In Touch
@@ -113,10 +119,16 @@ export function Contact() {
                 </div>
               </a>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Column: Contact Form */}
-          <div className="flex-1">
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="flex-1"
+          >
             <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
               <div>
                 <label className="block text-xs font-bold uppercase tracking-wider text-muted-foreground mb-2">
@@ -182,7 +194,7 @@ export function Contact() {
                 )}
               </button>
             </form>
-          </div>
+          </motion.div>
         </div>
       </motion.div>
     </section>

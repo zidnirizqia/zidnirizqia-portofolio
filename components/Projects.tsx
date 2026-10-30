@@ -369,8 +369,17 @@ export function Projects() {
 
   return (
     <section id="projects" className="w-full max-w-7xl mx-auto px-6 py-24 sm:py-32">
-      {/* Header */}
-      <div className="text-center mb-16">
+      {/* Header with Smooth Scroll Reveal */}
+      <motion.div
+        initial={{ opacity: 0, y: 35 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        className="text-center mb-16"
+      >
+        <span className="text-xs font-bold uppercase tracking-widest text-blue-400 mb-3 bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/20 inline-block">
+          Portfolio Showcase
+        </span>
         <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-8">
           Selected Works
         </h2>
@@ -400,7 +409,7 @@ export function Projects() {
             Certificates
           </button>
         </div>
-      </div>
+      </motion.div>
 
       {/* Content depending on Active Tab */}
       {activeTab === "projects" ? (
@@ -408,14 +417,15 @@ export function Projects() {
         <>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <AnimatePresence mode="popLayout">
-              {displayedProjects.map((item) => (
+              {displayedProjects.map((item, index) => (
                 <motion.div
                   key={item.id}
                   layout
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
+                  initial={{ opacity: 0, y: 35 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-40px" }}
+                  transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
                   exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.3 }}
                   className="bg-[#0a0f1d] border border-white/10 rounded-2xl overflow-hidden flex flex-col group hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(37,99,235,0.15)] transition-all duration-300"
                 >
                   {/* Image */}
@@ -510,14 +520,15 @@ export function Projects() {
         <>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <AnimatePresence mode="popLayout">
-              {displayedCertificates.map((cert) => (
+              {displayedCertificates.map((cert, index) => (
                 <motion.div
                   key={cert.id}
                   layout
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
+                  initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  viewport={{ once: true, margin: "-30px" }}
+                  transition={{ duration: 0.5, delay: (index % 3) * 0.08, ease: [0.22, 1, 0.36, 1] }}
                   exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.3 }}
                   onClick={() => setPreviewImage(cert.image)}
                   className="group relative aspect-[1.414/1] rounded-2xl overflow-hidden bg-white border border-white/20 hover:border-blue-400 hover:shadow-[0_0_30px_rgba(37,99,235,0.3)] transition-all duration-300 cursor-pointer flex items-center justify-center shadow-lg"
                 >

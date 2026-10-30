@@ -97,8 +97,12 @@ export function Education() {
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 {focusAreas.map((area, idx) => (
-                  <div
+                  <motion.div
                     key={idx}
+                    initial={{ opacity: 0, y: 15 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: 0.2 + idx * 0.08, ease: "easeOut" }}
                     className="flex items-start gap-3 p-3.5 rounded-2xl bg-muted/30 border border-border/40 hover:border-primary/30 transition-colors"
                   >
                     <div className="p-1 rounded-lg bg-primary/10 text-primary mt-0.5">
@@ -107,7 +111,7 @@ export function Education() {
                     <span className="text-xs sm:text-sm font-medium text-foreground leading-snug">
                       {area}
                     </span>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>

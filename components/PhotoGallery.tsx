@@ -2,6 +2,7 @@
 
 import React, { useRef, useState, useEffect, useCallback, useLayoutEffect } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -173,14 +174,23 @@ export function PhotoGallery() {
 
   return (
     <section className="v3-scope py-16 md:py-24 overflow-hidden relative" id="gallery">
-      <div className="text-center pb-8">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        className="text-center pb-8"
+      >
+        <span className="text-xs font-bold uppercase tracking-widest text-blue-400 mb-2 bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/20 inline-block">
+          Interactive View
+        </span>
         <h2 className="section-label">
           Project Gallery
         </h2>
         <p className="text-xs sm:text-sm text-muted-foreground mt-2 font-light">
           Drag horizontally or click on the left/right sides to explore project highlights
         </p>
-      </div>
+      </motion.div>
 
       <div
         ref={containerRef}

@@ -1,5 +1,6 @@
 import React from "react";
 import { Navbar } from "@/components/Navbar";
+import { ScrollProgressBar } from "@/components/ScrollProgressBar";
 import { Hero } from "@/components/Hero";
 import { StarsBackground } from "@/components/StarsBackground";
 import { TechMarquee } from "@/components/TechMarquee";
@@ -27,6 +28,9 @@ export default function Home() {
     <main className="relative min-h-screen bg-background overflow-x-hidden">
       {/* v3 starfield: fixed layer, hidden behind the opaque hero, visible from the marquee down */}
       <StarsBackground />
+
+      {/* Interactive Glowing Scroll Progress Bar */}
+      <ScrollProgressBar />
 
       {/* Top Fixed Sticky Glass Navbar */}
       <Navbar />

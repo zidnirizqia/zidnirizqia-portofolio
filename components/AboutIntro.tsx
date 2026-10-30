@@ -1,77 +1,65 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { FileText, Code } from "lucide-react";
 
-// Ported from clone v3 (About intro block). Hover reveals the Spider-Man photo through a radial mask.
+// Cinematic smooth cross-fade dissolve between normal photo and Spider-Man photo with a relaxed pause
 function InteractiveProfile() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [maskPos, setMaskPos] = useState({ x: -1000, y: -1000 });
+  const [showSpiderman, setShowSpiderman] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!containerRef.current) return;
-    const rect = containerRef.current.getBoundingClientRect();
-    setMaskPos({
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top,
-    });
-    setIsHovered(true);
-  };
+  useEffect(() => {
+    // 4-second cycle with 1.2s luxurious dissolve + ~2.8s resting pause
+    const interval = setInterval(() => {
+      setShowSpiderman((prev) => !prev);
+    }, 4000);
 
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-    setMaskPos({ x: -1000, y: -1000 });
-  };
+    return () => clearInterval(interval);
+  }, []);
+
+  const activeSpiderman = isHovered || showSpiderman;
 
   return (
     <div
-      ref={containerRef}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      className="w-[300px] h-[350px] sm:w-[380px] sm:h-[450px] lg:w-[420px] lg:h-[500px] cursor-none relative rounded-none overflow-hidden group select-none"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className="w-[300px] h-[350px] sm:w-[380px] sm:h-[450px] lg:w-[420px] lg:h-[500px] relative rounded-none overflow-hidden select-none cursor-pointer"
     >
       {/* Base Normal Photo */}
-      <Image
-        src="/profile.png"
-        alt="Zidni Khaerur Rizqia"
-        fill
-        priority
-        sizes="(max-width: 768px) 380px, 420px"
-        className="object-cover object-top grayscale-[15%] group-hover:grayscale-0 transition-all duration-700 pointer-events-none"
-      />
-
-      {/* Spider-man Easter Egg Reveal on Hover Mask */}
-      <div
-        className="absolute inset-0 pointer-events-none z-10 transition-opacity duration-200"
-        style={{
-          WebkitMaskImage: `radial-gradient(130px at ${maskPos.x}px ${maskPos.y}px, black 60%, transparent 100%)`,
-          maskImage: `radial-gradient(130px at ${maskPos.x}px ${maskPos.y}px, black 60%, transparent 100%)`,
-          WebkitMaskRepeat: "no-repeat",
-          maskRepeat: "no-repeat",
-          opacity: isHovered ? 1 : 0,
-        }}
+      <motion.div
+        className="absolute inset-0 w-full h-full will-change-[opacity]"
+        initial={false}
+        animate={{ opacity: activeSpiderman ? 0 : 1 }}
+        transition={{ duration: 1.2, ease: [0.4, 0, 0.2, 1] }}
       >
         <Image
-          src="/PhotoSpiderman.png"
-          alt="Reveal Easter Egg"
+          src="/profile.png"
+          alt="Zidni Khaerur Rizqia"
           fill
-          loading="lazy"
+          priority
           sizes="(max-width: 768px) 380px, 420px"
           className="object-cover object-top"
         />
-      </div>
+      </motion.div>
 
-      {/* Mouse Cursor Tracking Indicator Dot */}
-      <div
-        className="absolute w-3 h-3 rounded-full pointer-events-none z-50 mix-blend-difference bg-white -translate-x-1/2 -translate-y-1/2 transition-opacity duration-150"
-        style={{
-          left: `${maskPos.x}px`,
-          top: `${maskPos.y}px`,
-          opacity: isHovered ? 1 : 0,
-        }}
-      />
+      {/* Spider-Man Easter Egg Photo (Cinematic Cross-fade) */}
+      <motion.div
+        className="absolute inset-0 w-full h-full will-change-[opacity]"
+        initial={false}
+        animate={{ opacity: activeSpiderman ? 1 : 0 }}
+        transition={{ duration: 1.2, ease: [0.4, 0, 0.2, 1] }}
+      >
+        <Image
+          src="/PhotoSpiderman.png"
+          alt="Zidni as Spider-Man"
+          fill
+          priority
+          sizes="(max-width: 768px) 380px, 420px"
+          className="object-cover object-top"
+        />
+      </motion.div>
     </div>
   );
 }
@@ -94,10 +82,16 @@ export function AboutIntro() {
       className="v3-scope h-auto pb-20 text-foreground relative px-[5%] sm:px-[5%] lg:px-[10%] mt-24 sm:mt-28"
     >
       <div className="w-full mx-auto relative">
-        {/* Top 3-Column Layout on Desktop */}
+        {/* Top 3-Column Layout on Desktop with Staggered Scroll Reveal */}
         <div className="hidden lg:grid lg:grid-cols-[2.4fr_2.8fr_2.2fr] gap-8 items-center">
           {/* Left: Heading & Resume */}
-          <div className="min-w-0 space-y-6 text-left">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="min-w-0 space-y-6 text-left"
+          >
             <h2 className="font-display text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-tight">
               <span className="grad-vi block">Hi, I&apos;m</span>
               <span className="block text-foreground mt-1 whitespace-nowrap">Zidni Khaerur</span>
@@ -115,15 +109,27 @@ export function AboutIntro() {
                 </button>
               </a>
             </div>
-          </div>
+          </motion.div>
 
           {/* Center: Interactive Profile Photo */}
-          <div className="min-w-0 flex justify-center items-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, y: 30 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+            className="min-w-0 flex justify-center items-center"
+          >
             <InteractiveProfile />
-          </div>
+          </motion.div>
 
           {/* Right: Bio & View Projects */}
-          <div className="min-w-0 space-y-6 text-left">
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.8, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
+            className="min-w-0 space-y-6 text-left"
+          >
             <h3 className="font-display text-xl font-bold text-foreground tracking-tight">
               Building <span className="text-[#2c67ed]">Practical Software</span> through Development &amp; Experimentation
             </h3>
@@ -151,11 +157,17 @@ export function AboutIntro() {
                 </button>
               </a>
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Mobile / Tablet Stacked Layout */}
-        <div className="flex flex-col items-start gap-6 lg:hidden">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="flex flex-col items-start gap-6 lg:hidden"
+        >
           <div className="flex justify-center w-full">
             <InteractiveProfile />
           </div>
@@ -197,7 +209,7 @@ export function AboutIntro() {
               </button>
             </a>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

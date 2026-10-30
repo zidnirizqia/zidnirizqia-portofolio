@@ -43,8 +43,14 @@ export function Footer() {
 
   return (
     <footer className="w-full max-w-7xl mx-auto px-6 pb-28 pt-8 text-center flex flex-col items-center">
-      {/* Big Animated Callout Banner */}
-      <div className="w-full py-16 px-6 sm:px-10 rounded-[2.5rem] bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/10 text-center flex flex-col items-center justify-center mb-12 shadow-sm relative overflow-hidden">
+      {/* Big Animated Callout Banner with Scroll Reveal */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        className="w-full py-16 px-6 sm:px-10 rounded-[2.5rem] bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/10 text-center flex flex-col items-center justify-center mb-12 shadow-sm relative overflow-hidden"
+      >
         {/* Glow backdrop */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-32 bg-primary/10 blur-[80px] rounded-full pointer-events-none" />
 
@@ -77,7 +83,7 @@ export function Footer() {
         <p className="text-sm font-semibold text-muted-foreground mt-4 tracking-widest uppercase">
           Build. Test. Learn. Improve.
         </p>
-      </div>
+      </motion.div>
 
       {/* Footer Navigation & Actions */}
       <div className="w-full flex flex-col md:flex-row items-center justify-between gap-6 py-6 border-t border-border/60 text-sm">

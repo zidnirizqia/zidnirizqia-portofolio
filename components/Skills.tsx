@@ -111,10 +111,16 @@ export function Skills() {
         </p>
       </motion.div>
 
-      {/* 2-Column Grid */}
+      {/* 2-Column Grid with Scroll Reveal */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Left Column: Technical Arsenal */}
-        <div className="glass-panel p-6 sm:p-8 rounded-[2rem] border border-foreground/15 shadow-xl relative overflow-hidden">
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="glass-panel p-6 sm:p-8 rounded-[2rem] border border-foreground/15 shadow-xl relative overflow-hidden"
+        >
           <div className="flex items-center justify-between mb-8 pb-4 border-b border-border/60">
             <h4 className="text-xl font-bold text-foreground flex items-center gap-2.5">
               <Server className="w-5 h-5 text-primary" /> Technical Arsenal
@@ -159,10 +165,16 @@ export function Skills() {
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
 
         {/* Right Column: Professional Traits & Narrative Card */}
-        <div className="glass-panel p-6 sm:p-8 rounded-[2rem] border border-foreground/15 shadow-xl flex flex-col justify-between">
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+          className="glass-panel p-6 sm:p-8 rounded-[2rem] border border-foreground/15 shadow-xl flex flex-col justify-between"
+        >
           <div>
             <div className="flex items-center justify-between mb-8 pb-4 border-b border-border/60">
               <h4 className="text-xl font-bold text-foreground flex items-center gap-2.5">
@@ -216,7 +228,7 @@ export function Skills() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
