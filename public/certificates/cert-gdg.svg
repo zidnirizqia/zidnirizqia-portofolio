@@ -1,0 +1,77 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 840 595' width='100%' height='100%'>
+  <defs>
+    <linearGradient id='gold' x1='0%' y1='0%' x2='100%' y2='100%'>
+      <stop offset='0%' stop-color='#f6d365'/>
+      <stop offset='50%' stop-color='#fda085'/>
+      <stop offset='100%' stop-color='#f6d365'/>
+    </linearGradient>
+    <linearGradient id='bgGrad' x1='0%' y1='0%' x2='100%' y2='100%'>
+      <stop offset='0%' stop-color='#ffffff'/>
+      <stop offset='100%' stop-color='#f8fafc'/>
+    </linearGradient>
+    <linearGradient id='goldMedal' x1='0%' y1='0%' x2='100%' y2='100%'>
+      <stop offset='0%' stop-color='#ffd700'/>
+      <stop offset='50%' stop-color='#d4af37'/>
+      <stop offset='100%' stop-color='#aa7c11'/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Outer Card & Border -->
+  <rect width='840' height='595' fill='url(#bgGrad)' rx='8'/>
+  <rect x='24' y='24' width='792' height='547' fill='none' stroke='#0f172a' stroke-width='2' stroke-opacity='0.15'/>
+  <rect x='32' y='32' width='776' height='531' fill='none' stroke='#0f172a' stroke-width='1' stroke-opacity='0.1'/>
+  
+  <!-- Decorative Header Pattern -->
+  <path d='M24 24 L140 24 L24 140 Z' fill='#4285F4' opacity='0.12'/>
+  <path d='M816 24 L700 24 L816 140 Z' fill='#EA4335' opacity='0.12'/>
+  <path d='M24 571 L140 571 L24 455 Z' fill='#34A853' opacity='0.12'/>
+  <path d='M816 571 L700 571 L816 455 Z' fill='#FBBC05' opacity='0.12'/>
+  
+  <!-- Logo / Badge Header -->
+  <g transform='translate(60, 55)'>
+    <circle cx='18' cy='18' r='14' fill='#4285F4'/>
+    <circle cx='34' cy='18' r='14' fill='#EA4335' opacity='0.85'/>
+    <text x='58' y='24' font-family='sans-serif' font-weight='800' font-size='18' fill='#1e293b' letter-spacing='0.5'>Google Developer Groups</text>
+    <text x='58' y='38' font-family='sans-serif' font-size='10' font-weight='600' fill='#64748b'>On Campus Community Member</text>
+  </g>
+  
+  <!-- Ribbon Badge on Top Right -->
+  <g transform='translate(700, 48)'>
+    <!-- Ribbon tail -->
+    <path d='M20 70 L35 110 L50 70 Z' fill='#1d4ed8'/>
+    <circle cx='35' cy='45' r='36' fill='url(#goldMedal)' filter='drop-shadow(0 4px 6px rgba(0,0,0,0.15))'/>
+    <circle cx='35' cy='45' r='30' fill='#0f172a'/>
+    <text x='35' y='42' font-family='sans-serif' font-size='9' font-weight='700' fill='#ffd700' text-anchor='middle'>GDG</text>
+    <text x='35' y='54' font-family='sans-serif' font-size='7' font-weight='600' fill='#e2e8f0' text-anchor='middle'>COMMUNITY</text>
+  </g>
+  
+  <!-- Title -->
+  <text x='420' y='180' font-family='sans-serif' font-size='38' font-weight='900' fill='#0f172a' text-anchor='middle' letter-spacing='3'>CERTIFICATE</text>
+  <text x='420' y='212' font-family='serif' font-style='italic' font-size='20' fill='#dc2626' text-anchor='middle'>Of Appreciation</text>
+  <text x='420' y='235' font-family='sans-serif' font-size='11' font-weight='600' fill='#64748b' text-anchor='middle' letter-spacing='1'>NO: 060.018/KET/GDG-UG/VIII/2026</text>
+  
+  <text x='420' y='275' font-family='serif' font-style='italic' font-size='13' fill='#475569' text-anchor='middle'>This certificate is proudly presented to:</text>
+  
+  <!-- Recipient Name -->
+  <text x='420' y='325' font-family='sans-serif' font-size='28' font-weight='800' fill='#0f172a' text-anchor='middle' letter-spacing='1'>Zidni Khaerur Rizqia</text>
+  <line x1='240' y1='340' x2='600' y2='340' stroke='#cbd5e1' stroke-width='1.5'/>
+  
+  <!-- Description -->
+  <text x='420' y='375' font-family='sans-serif' font-size='12' fill='#334155' text-anchor='middle'>for active participation, commitment, and dedicated contribution in technological</text>
+  <text x='420' y='395' font-family='sans-serif' font-size='12' fill='#334155' text-anchor='middle'>workshops, computer vision studies, and collaborative software initiatives.</text>
+  
+  <!-- Signatures -->
+  <g transform='translate(150, 470)'>
+    <path d='M10 25 Q30 5 50 25 T90 20 T130 30' fill='none' stroke='#0f172a' stroke-width='2' opacity='0.7'/>
+    <line x1='0' y1='40' x2='150' y2='40' stroke='#94a3b8' stroke-width='1'/>
+    <text x='75' y='55' font-family='sans-serif' font-size='11' font-weight='700' fill='#1e293b' text-anchor='middle'>Lead GDG Chapter</text>
+    <text x='75' y='68' font-family='sans-serif' font-size='9' fill='#64748b' text-anchor='middle'>Community Organizer</text>
+  </g>
+  
+  <g transform='translate(540, 470)'>
+    <path d='M10 28 Q40 2 60 22 T110 15 T140 25' fill='none' stroke='#0f172a' stroke-width='2' opacity='0.7'/>
+    <line x1='0' y1='40' x2='150' y2='40' stroke='#94a3b8' stroke-width='1'/>
+    <text x='75' y='55' font-family='sans-serif' font-size='11' font-weight='700' fill='#1e293b' text-anchor='middle'>Faculty Advisor</text>
+    <text x='75' y='68' font-family='sans-serif' font-size='9' fill='#64748b' text-anchor='middle'>Universitas Gunadarma</text>
+  </g>
+</svg>

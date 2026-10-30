@@ -1,0 +1,44 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 840 595' width='100%' height='100%'>
+  <rect width='840' height='595' fill='#ffffff' rx='8'/>
+  <rect x='24' y='24' width='792' height='547' fill='none' stroke='#0f172a' stroke-width='2' stroke-opacity='0.12'/>
+  <rect x='30' y='30' width='780' height='535' fill='none' stroke='#2c3e50' stroke-width='1' stroke-opacity='0.08'/>
+  
+  <g transform='translate(65, 60)'>
+    <text x='0' y='28' font-family='sans-serif' font-weight='900' font-size='32' fill='#2d3e50' letter-spacing='-1'>dicoding</text>
+  </g>
+  
+  <g transform='translate(710, 45)'>
+    <rect x='0' y='0' width='55' height='85' fill='#1e293b'/>
+    <path d='M0 85 L27.5 70 L55 85 Z' fill='#ffffff'/>
+    <text x='27.5' y='20' font-family='sans-serif' font-size='7' font-weight='800' fill='#94a3b8' text-anchor='middle'>SERTIFIKAT</text>
+    <text x='27.5' y='30' font-family='sans-serif' font-size='6.5' font-weight='700' fill='#94a3b8' text-anchor='middle'>KOMPETENSI</text>
+    <circle cx='27.5' cy='52' r='14' fill='none' stroke='#10b981' stroke-width='2'/>
+    <text x='27.5' y='57' font-family='sans-serif' font-size='14' font-weight='900' fill='#10b981' text-anchor='middle'>✓</text>
+  </g>
+  
+  <g transform='translate(65, 120)'>
+    <rect x='0' y='0' width='105' height='22' rx='4' fill='#1e293b'/>
+    <text x='52.5' y='15' font-family='monospace' font-size='9' font-weight='700' fill='#38bdf8' text-anchor='middle'>DC781039XK21</text>
+  </g>
+  
+  <text x='65' y='180' font-family='sans-serif' font-size='13' fill='#64748b'>Diberikan kepada:</text>
+  <text x='65' y='225' font-family='sans-serif' font-size='34' font-weight='900' fill='#0f172a'>Zidni Khaerur Rizqia</text>
+  <line x1='65' y1='245' x2='680' y2='245' stroke='#e2e8f0' stroke-width='2'/>
+  
+  <text x='65' y='285' font-family='sans-serif' font-size='14' fill='#334155'>atas kelulusannya pada program sertifikasi:</text>
+  <text x='65' y='325' font-family='sans-serif' font-size='24' font-weight='800' fill='#047857'>Belajar Fundamental Aplikasi Web</text>
+  <text x='65' y='355' font-family='sans-serif' font-size='12' fill='#475569'>Kompetensi: JavaScript Modern ES6+, DOM Manipulation, Web Components, Custom Elements &amp; Fetch API Restful Services.</text>
+  
+  <g transform='translate(65, 465)'>
+    <text x='0' y='15' font-family='sans-serif' font-size='10' font-weight='600' fill='#64748b'>Terverifikasi secara resmi oleh:</text>
+    <text x='0' y='30' font-family='sans-serif' font-size='11' font-weight='700' fill='#0f172a'>Dicoding Academy Indonesia</text>
+    <text x='0' y='45' font-family='sans-serif' font-size='9' fill='#94a3b8'>ID Kredensial: DC-WEB-2025</text>
+  </g>
+  
+  <g transform='translate(560, 460)'>
+    <path d='M10 20 Q40 5 70 22 T120 15' fill='none' stroke='#0f172a' stroke-width='2' opacity='0.75'/>
+    <line x1='0' y1='35' x2='150' y2='35' stroke='#94a3b8' stroke-width='1'/>
+    <text x='75' y='50' font-family='sans-serif' font-size='11' font-weight='700' fill='#0f172a' text-anchor='middle'>Narenda Wicaksono</text>
+    <text x='75' y='63' font-family='sans-serif' font-size='9' fill='#64748b' text-anchor='middle'>Chief Executive Officer</text>
+  </g>
+</svg>

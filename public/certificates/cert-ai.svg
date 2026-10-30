@@ -1,0 +1,58 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 840 595' width='100%' height='100%'>
+  <defs>
+    <linearGradient id='goldMedal' x1='0%' y1='0%' x2='100%' y2='100%'>
+      <stop offset='0%' stop-color='#ffd700'/>
+      <stop offset='50%' stop-color='#d4af37'/>
+      <stop offset='100%' stop-color='#996515'/>
+    </linearGradient>
+  </defs>
+  
+  <rect width='840' height='595' fill='#fefefe' rx='8'/>
+  <rect x='24' y='24' width='792' height='547' fill='none' stroke='#1e293b' stroke-width='2' stroke-opacity='0.15'/>
+  <rect x='30' y='30' width='780' height='535' fill='none' stroke='#b45309' stroke-width='1' stroke-opacity='0.4'/>
+  
+  <!-- Organization Header -->
+  <g transform='translate(60, 55)'>
+    <rect x='0' y='0' width='36' height='36' rx='6' fill='#0f172a'/>
+    <text x='18' y='24' font-family='sans-serif' font-weight='900' font-size='18' fill='#38bdf8' text-anchor='middle'>AI</text>
+    <text x='50' y='20' font-family='sans-serif' font-weight='800' font-size='15' fill='#0f172a' letter-spacing='1'>INSTITUTE FOR ARTIFICIAL INTELLIGENCE</text>
+    <text x='50' y='33' font-family='sans-serif' font-weight='600' font-size='9' fill='#64748b'>CENTER FOR MACHINE LEARNING &amp; APPLIED COMPUTING</text>
+  </g>
+  
+  <!-- Gold Seal -->
+  <g transform='translate(705, 52)'>
+    <circle cx='38' cy='38' r='36' fill='url(#goldMedal)'/>
+    <circle cx='38' cy='38' r='30' fill='#ffffff'/>
+    <text x='38' y='34' font-family='sans-serif' font-size='8' font-weight='800' fill='#996515' text-anchor='middle'>VERIFIED</text>
+    <text x='38' y='46' font-family='sans-serif' font-size='7' font-weight='700' fill='#0f172a' text-anchor='middle'>EXCELLENCE</text>
+  </g>
+  
+  <text x='420' y='180' font-family='sans-serif' font-size='32' font-weight='900' fill='#0f172a' text-anchor='middle' letter-spacing='2'>SERTIFIKAT KOMPETENSI</text>
+  <text x='420' y='208' font-family='serif' font-size='14' font-style='italic' fill='#64748b' text-anchor='middle'>Nomor Registrasi: 412/SK-AI/UG-KOMP/2026</text>
+  <text x='420' y='250' font-family='sans-serif' font-size='13' fill='#334155' text-anchor='middle'>Dengan ini menyatakan bahwa:</text>
+  
+  <!-- Recipient -->
+  <text x='420' y='300' font-family='sans-serif' font-size='30' font-weight='900' fill='#1e3a8a' text-anchor='middle' letter-spacing='1'>ZIDNI KHAERUR RIZQIA</text>
+  <line x1='200' y1='318' x2='640' y2='318' stroke='#cbd5e1' stroke-width='1.5'/>
+  
+  <text x='420' y='350' font-family='sans-serif' font-size='14' fill='#334155' text-anchor='middle'>telah menunjukkan kompetensi unggul dalam:</text>
+  <text x='420' y='385' font-family='sans-serif' font-size='22' font-weight='800' fill='#0f172a' text-anchor='middle'>Visi Komputer &amp; Deteksi Objek Berbasis Deep Learning</text>
+  <text x='420' y='415' font-family='sans-serif' font-size='13' font-weight='600' fill='#475569' text-anchor='middle'>Kualifikasi: YOLOv8 Architecture, Deep SORT Multi-Object Tracking &amp; Directional Analytics</text>
+  
+  <!-- Signatures & Verification -->
+  <g transform='translate(80, 470)'>
+    <rect x='0' y='0' width='44' height='44' fill='#f1f5f9' stroke='#cbd5e1'/>
+    <rect x='6' y='6' width='12' height='12' fill='#0f172a'/>
+    <rect x='26' y='6' width='12' height='12' fill='#0f172a'/>
+    <rect x='6' y='26' width='12' height='12' fill='#0f172a'/>
+    <text x='54' y='18' font-family='sans-serif' font-size='9' font-weight='700' fill='#1e293b'>ID Sertifikat: AI-UG-8829</text>
+    <text x='54' y='32' font-family='sans-serif' font-size='8' fill='#64748b'>Berlaku hingga: Seumur Hidup</text>
+  </g>
+  
+  <g transform='translate(560, 460)'>
+    <path d='M10 25 Q35 5 70 25 T120 18' fill='none' stroke='#0f172a' stroke-width='2' opacity='0.75'/>
+    <line x1='0' y1='38' x2='160' y2='38' stroke='#94a3b8' stroke-width='1'/>
+    <text x='80' y='52' font-family='sans-serif' font-size='11' font-weight='700' fill='#0f172a' text-anchor='middle'>Direktur Penguji</text>
+    <text x='80' y='65' font-family='sans-serif' font-size='9' fill='#64748b' text-anchor='middle'>Dewan Sertifikasi Kompetensi</text>
+  </g>
+</svg>
