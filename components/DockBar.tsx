@@ -107,6 +107,7 @@ function DockIcon({
 export function DockBar() {
   const mouseX = useMotionValue(Infinity);
   const [visible, setVisible] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -117,9 +118,25 @@ export function DockBar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handleModalChange = (e: Event) => {
+      const customEvent = e as CustomEvent<{ open?: boolean }>;
+      setIsModalOpen(Boolean(customEvent.detail?.open));
+    };
+
+    window.addEventListener("portfolio:modal-change", handleModalChange);
+    if (typeof document !== "undefined" && document.body.getAttribute("data-modal-open") === "true") {
+      setIsModalOpen(true);
+    }
+
+    return () => {
+      window.removeEventListener("portfolio:modal-change", handleModalChange);
+    };
+  }, []);
+
   return (
     <AnimatePresence>
-      {visible && (
+      {visible && !isModalOpen && (
         <motion.aside
           initial={{ opacity: 0, y: 50, scale: 0.9 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}

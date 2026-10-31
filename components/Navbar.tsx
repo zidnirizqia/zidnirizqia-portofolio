@@ -7,8 +7,8 @@ import { cn } from "@/lib/utils";
 const navLinks = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
-  { name: "Education", href: "#education" },
   { name: "Projects", href: "#projects" },
+  { name: "Education", href: "#education" },
   { name: "Skills", href: "#skills" },
   { name: "Contact", href: "#contact" },
 ];
@@ -23,7 +23,7 @@ export function Navbar() {
       setScrolled(window.scrollY > 120);
 
       // Detect active section
-      const sections = ["home", "about", "education", "projects", "skills", "contact"];
+      const sections = ["home", "about", "projects", "education", "skills", "contact"];
       const scrollPos = window.scrollY + 200;
 
       for (const sec of sections) {

@@ -181,15 +181,9 @@ export function PhotoGallery() {
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         className="text-center pb-8"
       >
-        <span className="text-xs font-bold uppercase tracking-widest text-blue-400 mb-2 bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/20 inline-block">
-          Interactive View
-        </span>
         <h2 className="section-label">
-          Project Gallery
+          Gallery
         </h2>
-        <p className="text-xs sm:text-sm text-muted-foreground mt-2 font-light">
-          Drag horizontally or click on the left/right sides to explore project highlights
-        </p>
       </motion.div>
 
       <div

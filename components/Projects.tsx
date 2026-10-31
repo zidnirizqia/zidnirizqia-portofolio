@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -220,30 +221,6 @@ const projects: ProjectItem[] = [
         caption: "Peta Arsitektur Rekayasa Perangkat Lunak & Deliverables Technical Documentation (SRS, SDD, Test Plan, Manual)"
       }
     ]
-  },
-  {
-    id: 4,
-    title: "Modern Frontend & Containerization Practice",
-    fullTitle: "Modern Frontend Engineering & Containerized Micro-services Practice",
-    category: "Frontend & Cloud Engineering",
-    description:
-      "Eksplorasi arsitektur frontend modern menggunakan React dan TypeScript dengan alur kerja git-flow terstruktur, containerization Docker, serta prinsip antarmuka responsif performa tinggi.",
-    tags: ["React", "TypeScript", "Git Flow", "Docker", "Tailwind CSS"],
-    image: "/project-frontend.jpg",
-    academicMeta: {
-      type: "Practical Engineering Project",
-      institution: "Self-Directed / Industry Practice",
-      year: "2026",
-      scoreOrAccuracy: "Production Ready Architecture"
-    },
-    overview:
-      "Proyek rekayasa perangkat lunak mandiri yang berfokus pada implementasi standar frontend modern, modularisasi komponen, manajemen state terpusat, pengujian terisolasi, dan penerapan kontainer Docker untuk menjamin portabilitas lingkungan pengembangan ke produksi.",
-    features: [
-      "Arsitektur komponen React modular dan tipe data TypeScript yang ketat.",
-      "Automasi container berbasis Dockerfile multi-stage build untuk image yang ringan.",
-      "Penerapan utility-first styling menggunakan Tailwind CSS dengan dukungan dark/light theme.",
-      "Manajemen source control dengan konvensi semantic commit dan branching yang rapi."
-    ]
   }
 ];
 
@@ -336,6 +313,11 @@ export function Projects() {
   const [showAllCertificates, setShowAllCertificates] = useState(false);
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
   const [previewImage, setPreviewImage] = useState<string | null>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Close modal with ESC key
   useEffect(() => {
@@ -352,15 +334,22 @@ export function Projects() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [previewImage]);
 
-  // Lock body scroll when modal or lightbox is open
+  // Lock body scroll and notify other components (such as DockBar) when modal or lightbox is open
   useEffect(() => {
-    if (selectedProject || previewImage) {
+    const isModalOpen = Boolean(selectedProject || previewImage);
+    if (isModalOpen) {
       document.body.style.overflow = "hidden";
+      document.body.setAttribute("data-modal-open", "true");
+      window.dispatchEvent(new CustomEvent("portfolio:modal-change", { detail: { open: true } }));
     } else {
       document.body.style.overflow = "unset";
+      document.body.removeAttribute("data-modal-open");
+      window.dispatchEvent(new CustomEvent("portfolio:modal-change", { detail: { open: false } }));
     }
     return () => {
       document.body.style.overflow = "unset";
+      document.body.removeAttribute("data-modal-open");
+      window.dispatchEvent(new CustomEvent("portfolio:modal-change", { detail: { open: false } }));
     };
   }, [selectedProject, previewImage]);
 
@@ -377,9 +366,6 @@ export function Projects() {
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         className="text-center mb-16"
       >
-        <span className="text-xs font-bold uppercase tracking-widest text-blue-400 mb-3 bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/20 inline-block">
-          Portfolio Showcase
-        </span>
         <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-8">
           Selected Works
         </h2>
@@ -510,7 +496,7 @@ export function Projects() {
                 onClick={() => setShowAllProjects(!showAllProjects)}
                 className="px-6 py-2.5 rounded-full bg-[#111c38] hover:bg-blue-900/50 text-blue-300 border border-blue-500/20 text-sm font-bold transition-all hover:shadow-[0_0_15px_rgba(29,78,216,0.3)]"
               >
-                {showAllProjects ? "Tampilkan Lebih Sedikit" : "Tampilkan Lainnya (Semua Karya)"}
+                {showAllProjects ? "Less" : "More"}
               </button>
             </div>
           )}
@@ -572,10 +558,13 @@ export function Projects() {
         </>
       )}
 
-      {/* Detailed Project Overview Modal */}
-      <AnimatePresence>
-        {selectedProject && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-8">
+      {/* Detailed Project Overview Modal & Lightbox via Portal */}
+      {mounted && typeof document !== "undefined" && createPortal(
+        <>
+          {/* Detailed Project Overview Modal */}
+          <AnimatePresence>
+            {selectedProject && (
+              <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 md:p-8">
             {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
@@ -789,10 +778,7 @@ export function Projects() {
               </div>
 
               {/* Modal Footer */}
-              <div className="sticky bottom-0 z-20 flex items-center justify-between px-6 py-4 bg-[#0c1326]/95 backdrop-blur-md border-t border-white/10">
-                <span className="text-xs text-neutral-400">
-                  Dikutip dari dokumen akademik resmi Penulis (Universitas Gunadarma)
-                </span>
+              <div className="sticky bottom-0 z-20 flex items-center justify-end px-6 py-4 bg-[#0c1326]/95 backdrop-blur-md border-t border-white/10">
                 <div className="flex items-center gap-3">
                   <button
                     onClick={() => setSelectedProject(null)}
@@ -814,33 +800,36 @@ export function Projects() {
         )}
       </AnimatePresence>
 
-      {/* Lightbox / Fullscreen Image Zoom for Certificates & Gallery */}
-      <AnimatePresence>
-        {previewImage && (
-          <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/90 backdrop-blur-md">
-            {/* Backdrop to close */}
-            <div
-              className="absolute inset-0"
-              onClick={() => setPreviewImage(null)}
-            />
+          {/* Lightbox / Fullscreen Image Zoom for Certificates & Gallery */}
+          <AnimatePresence>
+            {previewImage && (
+              <div className="fixed inset-0 z-[110] flex items-center justify-center p-4 bg-black/90 backdrop-blur-md">
+                {/* Backdrop to close */}
+                <div
+                  className="absolute inset-0"
+                  onClick={() => setPreviewImage(null)}
+                />
 
-            <button
-              onClick={() => setPreviewImage(null)}
-              className="absolute top-5 right-5 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors z-20 border border-white/20"
-              aria-label="Tutup Pratinjau"
-            >
-              <X className="w-6 h-6" />
-            </button>
-            <div className="relative z-10 max-w-5xl max-h-[90vh] overflow-hidden rounded-2xl border border-white/20 shadow-2xl bg-black/40">
-              <img
-                src={previewImage}
-                alt="Enlarged Preview"
-                className="w-full h-full object-contain max-h-[85vh] rounded-2xl"
-              />
-            </div>
-          </div>
-        )}
-      </AnimatePresence>
+                <button
+                  onClick={() => setPreviewImage(null)}
+                  className="absolute top-5 right-5 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors z-20 border border-white/20"
+                  aria-label="Tutup Pratinjau"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+                <div className="relative z-10 max-w-5xl max-h-[90vh] overflow-hidden rounded-2xl border border-white/20 shadow-2xl bg-black/40">
+                  <img
+                    src={previewImage}
+                    alt="Enlarged Preview"
+                    className="w-full h-full object-contain max-h-[85vh] rounded-2xl"
+                  />
+                </div>
+              </div>
+            )}
+          </AnimatePresence>
+        </>,
+        document.body
+      )}
     </section>
   );
 }
