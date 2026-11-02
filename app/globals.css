@@ -129,3 +129,21 @@
 ::-webkit-scrollbar-thumb:hover {
   background: var(--primary);
 }
+
+/* Blinking cursor keyframe */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* Hide floating dock whenever a project modal or certificate lightbox is open */
+body[data-modal-open="true"] aside[aria-label="Bottom Navigation"],
+body[data-modal-open="true"] .dockbar-container {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}

@@ -5,6 +5,7 @@ import { Hero } from "@/components/Hero";
 import { StarsBackground } from "@/components/StarsBackground";
 import { TechMarquee } from "@/components/TechMarquee";
 import { AboutIntro } from "@/components/AboutIntro";
+import { Experience } from "@/components/Experience";
 import { Projects } from "@/components/Projects";
 import { PhotoGallery } from "@/components/PhotoGallery";
 import { Education } from "@/components/Education";
@@ -46,6 +47,9 @@ export default function Home() {
 
         {/* About intro (from v3) */}
         <AboutIntro />
+
+        {/* Experience Section (IT Support & Lab Programmer) */}
+        <Experience />
 
         {/* Selected Works (Bento Grid) */}
         <Projects />

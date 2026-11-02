@@ -1,18 +1,17 @@
 "use client";
 
-import React, { useRef, useState, useEffect, useCallback, useLayoutEffect } from "react";
+import React, { useRef, useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 const galleryPhotos = [
   { id: 1, src: "/projects/skripsi-annotated-video.png", title: "Automated Vehicle Tracking", subtitle: "YOLOv8 + Deep SORT Pipeline" },
-  { id: 2, src: "/projects/pi-masjo-thumb.png", title: "Mie Ayam Mas Jo Website", subtitle: "Pemesanan & Poin Loyalitas" },
-  { id: 3, src: "/projects/jumantik-preview.png", title: "Sistem Informasi Jumantik", subtitle: "Geotagging & AI Assistant Kelurahan" },
-  { id: 4, src: "/projects/pi-masjo-admin-dashboard.png", title: "Admin Management & Reports", subtitle: "Rekapitulasi Penjualan UMKM" },
-  { id: 5, src: "/projects/skripsi-tracking-system.png", title: "Directional Line Crossing", subtitle: "Antarmuka Flask & Live Counter" },
-  { id: 6, src: "/projects/jumantik-docs-architecture.svg", title: "Software Architecture Map", subtitle: "Technical Documentation (SRS, SDD)" },
+  { id: 2, src: "/projects/pi-masjo-thumb.png", title: "Mie Ayam Mas Jo Website", subtitle: "Online Ordering & Customer Loyalty System" },
+  { id: 3, src: "/projects/jumantik-preview.png", title: "Jumantik Information System", subtitle: "GPS Geotagging & Public Health AI" },
+  { id: 4, src: "/projects/pi-masjo-admin-dashboard.png", title: "Admin & Analytics Dashboard", subtitle: "SMB Sales & Inventory Insights" },
+  { id: 5, src: "/projects/skripsi-tracking-system.png", title: "Directional Line Crossing", subtitle: "Flask Web UI & Real-Time Traffic Counter" },
+  { id: 6, src: "/projects/jumantik-docs-architecture.svg", title: "Software Architecture Map", subtitle: "IEEE Technical Documentation (SRS, SDD)" },
 ];
 
 export function PhotoGallery() {
@@ -253,7 +252,28 @@ export function PhotoGallery() {
           </div>
         </div>
 
-
+        {/* Carousel Navigation Buttons */}
+        <div className="flex items-center gap-3 mt-4 z-20">
+          <button
+            type="button"
+            onClick={() => animateTo(Math.round(targetPos.current) - 1)}
+            className="p-3 rounded-full bg-white/5 border border-white/10 text-white hover:bg-blue-600/30 hover:border-blue-500/40 transition-all hover:scale-110 active:scale-95 cursor-pointer"
+            aria-label="Previous slide"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          <span className="text-xs font-mono text-zinc-400">
+            {activeIndex + 1} / {count}
+          </span>
+          <button
+            type="button"
+            onClick={() => animateTo(Math.round(targetPos.current) + 1)}
+            className="p-3 rounded-full bg-white/5 border border-white/10 text-white hover:bg-blue-600/30 hover:border-blue-500/40 transition-all hover:scale-110 active:scale-95 cursor-pointer"
+            aria-label="Next slide"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        </div>
       </div>
     </section>
   );

@@ -112,8 +112,7 @@ function InteractiveProfile() {
   );
 }
 
-const resumeHref =
-  "mailto:zidnikhaerurrizqia9@gmail.com?subject=Resume%20Request%20-%20Zidni%20Khaerur%20Rizqia";
+const resumeHref = "/CV_ZidniKhaerurRizqia_ITSupport.pdf";
 
 export function AboutIntro() {
   const scrollToProjects = (e: React.MouseEvent) => {
@@ -141,19 +140,18 @@ export function AboutIntro() {
             className="min-w-0 space-y-6 text-left"
           >
             <h2 className="font-display text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-tight">
-              <span className="grad-vi block">Hi, I&apos;m</span>
-              <span className="block text-foreground mt-1 whitespace-nowrap">Zidni Khaerur</span>
-              <span className="block text-foreground whitespace-nowrap">Rizqia</span>
+              <span className="grad-vi block">About</span>
+              <span className="block text-foreground mt-1 whitespace-nowrap">Me</span>
             </h2>
 
             <div className="mt-8">
               <a href={resumeHref} target="_blank" rel="noopener noreferrer">
                 <button
                   id="about-view-resume"
-                  className="font-display px-6 py-3.5 rounded-xl font-semibold transition-all duration-300 hover:scale-105 flex items-center gap-2 hover:shadow-[0_0_25px_rgba(37,99,235,0.4)] whitespace-nowrap bg-[#2c67ed] text-white"
+                  className="font-display px-6 py-3.5 rounded-xl font-semibold transition-all duration-300 hover:scale-105 flex items-center gap-2 hover:shadow-[0_0_25px_rgba(37,99,235,0.4)] whitespace-nowrap bg-[#2c67ed] text-white cursor-pointer"
                 >
                   <FileText className="w-4 h-4" />
-                  <span>View Resume</span>
+                  <span>Download CV (PDF)</span>
                 </button>
               </a>
             </div>
@@ -179,18 +177,25 @@ export function AboutIntro() {
             className="min-w-0 space-y-6 text-left"
           >
             <h3 className="font-display text-xl font-bold text-foreground tracking-tight">
-              Building <span className="text-[#2c67ed]">Practical Software</span> through Development &amp; Experimentation
+              Web systems, computer vision, and <span className="text-[#2c67ed]">IT support</span>
             </h3>
             <div className="text-base sm:text-lg leading-relaxed space-y-3 font-light text-v3-muted">
               <p>
-                I am an Informatics graduate from Universitas Gunadarma with
-                experience in software development and applied technology
-                projects. My work spans web-based systems and computer vision.
+                I graduated with a Bachelor of Computer Science in Informatics from
+                Universitas Gunadarma in 2026 (GPA 3.69 / 4.00). From September 2024
+                to July 2026, I worked as a Programmer and IT Support Specialist at
+                the Intermediate Accounting Laboratory (Labamen), maintaining and
+                troubleshooting ~30 lab PCs while leading practical lab sessions
+                for cohorts of ~30 students.
               </p>
               <p>
-                I developed a food-ordering website for Mie Ayam Mas Jo with a
-                loyalty point system and worked on vehicle detection, tracking,
-                and counting using YOLOv8 and Deep SORT.
+                My core work includes a food ordering website with a customer
+                loyalty points system for Mie Ayam Mas Jo (PHP, MySQL, Midtrans
+                QRIS, achieving a 92.6% user acceptance rate in UAT across 15
+                respondents) and an automated vehicle detection, tracking, and
+                counting pipeline using YOLOv8 and Deep SORT (~98% counting
+                accuracy on test footage). I also completed Cisco networking (LAN &amp;
+                WAN) and AWS Cloud foundational training.
               </p>
             </div>
 
@@ -198,7 +203,7 @@ export function AboutIntro() {
               <a href="#projects" onClick={scrollToProjects}>
                 <button
                   id="about-view-projects"
-                  className="font-display px-6 py-3.5 rounded-xl font-semibold transition-all duration-300 hover:scale-105 flex items-center gap-2 hover:bg-[rgba(37,99,235,0.08)] whitespace-nowrap border border-[rgba(37,99,235,0.35)] text-blue-600 dark:text-blue-400"
+                  className="font-display px-6 py-3.5 rounded-xl font-semibold transition-all duration-300 hover:scale-105 flex items-center gap-2 hover:bg-[rgba(37,99,235,0.08)] whitespace-nowrap border border-[rgba(37,99,235,0.35)] text-blue-600 dark:text-blue-400 cursor-pointer"
                 >
                   <Code className="w-4 h-4" />
                   <span>View Projects</span>
@@ -221,36 +226,48 @@ export function AboutIntro() {
           </div>
 
           <h2 className="font-display text-4xl sm:text-5xl font-bold tracking-tight leading-tight text-left w-full">
-            <span className="grad-vi block">Hi, I&apos;m</span>
-            <span className="block text-foreground mt-1">Zidni Khaerur Rizqia</span>
+            <span className="grad-vi block">About</span>
+            <span className="block text-foreground mt-1">Me</span>
           </h2>
 
-          <div className="text-base sm:text-lg leading-relaxed text-left w-full space-y-2 font-light text-v3-muted">
-            <p>
-              Building <strong>Practical Software</strong> through Development, Experimentation, and Technology.
+          <div className="text-base sm:text-lg leading-relaxed text-left w-full space-y-3 font-light text-v3-muted">
+            <p className="font-semibold text-foreground">
+              Web systems, computer vision, and IT support
             </p>
             <p>
-              Informatics graduate from Universitas Gunadarma experienced in web
-              application engineering, food ordering systems with customer
-              loyalty, and YOLOv8 computer vision pipelines.
+              I graduated with a Bachelor of Computer Science in Informatics from
+              Universitas Gunadarma in 2026 (GPA 3.69 / 4.00). From September 2024
+              to July 2026, I worked as a Programmer and IT Support Specialist at
+              the Intermediate Accounting Laboratory (Labamen), maintaining and
+              troubleshooting ~30 lab PCs while leading practical lab sessions
+              for cohorts of ~30 students.
+            </p>
+            <p>
+              My core work includes a food ordering website with a customer
+              loyalty points system for Mie Ayam Mas Jo (PHP, MySQL, Midtrans
+              QRIS, achieving a 92.6% user acceptance rate in UAT across 15
+              respondents) and an automated vehicle detection, tracking, and
+              counting pipeline using YOLOv8 and Deep SORT (~98% counting
+              accuracy on test footage). I also completed Cisco networking (LAN &amp;
+              WAN) and AWS Cloud foundational training.
             </p>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-3 w-full">
-            <a href={resumeHref} className="flex-1">
+            <a href={resumeHref} target="_blank" rel="noopener noreferrer" className="flex-1">
               <button
                 id="about-view-resume-mobile"
-                className="font-display w-full px-6 py-3.5 rounded-xl font-semibold transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 bg-[#2c67ed] text-white"
+                className="font-display w-full px-6 py-3.5 rounded-xl font-semibold transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 bg-[#2c67ed] text-white cursor-pointer"
               >
                 <FileText className="w-4 h-4" />
-                <span>View Resume</span>
+                <span>Download CV (PDF)</span>
               </button>
             </a>
 
             <a href="#projects" onClick={scrollToProjects} className="flex-1">
               <button
                 id="about-view-projects-mobile"
-                className="font-display w-full px-6 py-3.5 rounded-xl font-semibold transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 border border-[rgba(37,99,235,0.35)] text-blue-600 dark:text-blue-400"
+                className="font-display w-full px-6 py-3.5 rounded-xl font-semibold transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 border border-[rgba(37,99,235,0.35)] text-blue-600 dark:text-blue-400 cursor-pointer"
               >
                 <Code className="w-4 h-4" />
                 <span>View Projects</span>

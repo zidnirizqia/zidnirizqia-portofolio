@@ -6,16 +6,17 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const rotatingTitles = [
   "Informatics Graduate",
-  "Software Developer",
-  "Computer Vision Enthusiast",
+  "IT Support Specialist",
   "Web Developer",
+  "Software Developer",
 ];
 
 const footerNav = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
-  { name: "Education", href: "#education" },
+  { name: "Experience", href: "#experience" },
   { name: "Projects", href: "#projects" },
+  { name: "Education", href: "#education" },
   { name: "Skills", href: "#skills" },
   { name: "Contact", href: "#contact" },
 ];
@@ -54,14 +55,9 @@ export function Footer() {
         {/* Glow backdrop */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-32 bg-primary/10 blur-[80px] rounded-full pointer-events-none" />
 
-        {/* Badge */}
-        <span className="text-xs font-extrabold uppercase tracking-widest text-primary mb-4 bg-primary/10 px-4 py-1.5 rounded-full border border-primary/20 shadow-sm">
-          LEARN · BUILD · IMPROVE
-        </span>
-
         {/* Headline */}
         <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground mb-4 tracking-tight">
-          Turning Ideas into Practical Technology
+          Looking for an internship or full-time position?
         </h3>
 
         {/* Rotating Titles with Smooth Blur Crossfade */}
@@ -80,9 +76,17 @@ export function Footer() {
           </AnimatePresence>
         </div>
 
-        <p className="text-sm font-semibold text-muted-foreground mt-4 tracking-widest uppercase">
-          Build. Test. Learn. Improve.
-        </p>
+        {/* Button */}
+        <div className="mt-8">
+          <a
+            href="https://wa.me/6281779133277"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-primary text-primary-foreground font-semibold text-sm transition-all hover:bg-primary/90 hover:scale-105 shadow-[0_0_25px_rgba(139,92,246,0.35)]"
+          >
+            Send a message via WhatsApp
+          </a>
+        </div>
       </motion.div>
 
       {/* Footer Navigation & Actions */}
@@ -102,7 +106,7 @@ export function Footer() {
 
         {/* Copyright */}
         <div className="text-muted-foreground text-xs sm:text-sm font-normal">
-          © {new Date().getFullYear()} Zidni Khaerur Rizqia. All rights reserved.
+          © 2026 Zidni Khaerur Rizqia. All rights reserved.
         </div>
 
         {/* Back to top */}
@@ -110,8 +114,7 @@ export function Footer() {
           onClick={scrollToTop}
           className="px-4 py-2 rounded-full glass-panel border border-foreground/10 text-foreground text-xs font-bold hover:border-primary/40 hover:text-primary transition-all flex items-center gap-1.5 shadow-sm hover:scale-105 cursor-pointer"
         >
-          <span>Back to top</span>
-          <ArrowUp className="w-3.5 h-3.5" />
+          <span>Back to top ↑</span>
         </button>
       </div>
     </footer>

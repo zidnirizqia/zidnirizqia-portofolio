@@ -1,11 +1,59 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Github, Linkedin, Mail, MessageSquare } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Mail, MessageSquare, ExternalLink } from "lucide-react";
 import { DotPattern } from "./DotPattern";
 import { AuroraText } from "./AuroraText";
 import { LanyardCard } from "./LanyardCard";
+
+const typewriterTitles = [
+  "Informatics Graduate",
+  "Software & Web Developer",
+  "Computer Vision Specialist",
+  "IT Support & Network Engineer",
+];
+
+function Typewriter() {
+  const [text, setText] = useState("");
+  const [isTyping, setIsTyping] = useState(true);
+  const [titleIndex, setTitleIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+
+  const tick = useCallback(() => {
+    const current = typewriterTitles[titleIndex];
+    if (isTyping) {
+      if (charIndex < current.length) {
+        setText((prev) => prev + current[charIndex]);
+        setCharIndex((prev) => prev + 1);
+      } else {
+        setTimeout(() => setIsTyping(false), 2000);
+      }
+    } else {
+      if (charIndex > 0) {
+        setText((prev) => prev.slice(0, -1));
+        setCharIndex((prev) => prev - 1);
+      } else {
+        setTitleIndex((prev) => (prev + 1) % typewriterTitles.length);
+        setIsTyping(true);
+      }
+    }
+  }, [charIndex, isTyping, titleIndex]);
+
+  useEffect(() => {
+    const timer = setTimeout(tick, isTyping ? 90 : 45);
+    return () => clearTimeout(timer);
+  }, [tick, isTyping]);
+
+  return (
+    <div className="h-8 flex items-center justify-center md:justify-start">
+      <span className="text-lg md:text-xl text-blue-400 font-medium tracking-wide">
+        {text}
+      </span>
+      <span className="w-[2.5px] h-5 ml-1.5 rounded-full bg-[#2c67ed] animate-blink" />
+    </div>
+  );
+}
 
 export function Hero() {
   const scrollToProjects = () => {
@@ -47,67 +95,74 @@ export function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-            className="mb-4 text-center md:text-left w-full"
+            transition={{ delay: 0.25, duration: 0.8 }}
+            className="mb-3 text-center md:text-left w-full"
           >
-            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-2">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-neutral-300 mb-1">
               Hi, I&apos;m
             </h1>
 
-            {/* Aurora Animated Text */}
+            {/* Aurora Animated Text Name */}
             <div>
               <AuroraText
                 text="Zidni Khaerur Rizqia"
                 fontSize="clamp(2.2rem, 5vw, 4.2rem)"
                 className="bg-transparent overflow-visible p-0 justify-start"
-                textClassName="bg-gradient-to-r from-cyan-400 via-purple-400 to-sky-300 bg-clip-text text-transparent pb-2 font-extrabold"
+                textClassName="bg-gradient-to-r from-blue-400 via-purple-400 to-sky-300 bg-clip-text text-transparent pb-2 font-extrabold"
               />
+            </div>
+
+            {/* Dynamic Typewriter */}
+            <div className="mt-2">
+              <Typewriter />
             </div>
           </motion.div>
 
           <motion.p
-            className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl mb-8 leading-relaxed w-full"
+            className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl mb-8 leading-relaxed w-full font-light"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
+            transition={{ delay: 0.45, duration: 0.8 }}
           >
-            Informatics graduate from Universitas Gunadarma with hands-on
-            experience in web application development and computer vision. I
-            enjoy turning technical problems into practical solutions—from
-            building a food-ordering website with a loyalty point system to
-            developing vehicle detection, tracking, and counting pipelines.
+            Informatics graduate from Universitas Gunadarma (GPA 3.69 / 4.00).
+            I build modern web applications and computer vision pipelines,
+            grounded by nearly two years of hands-on experience in computer
+            laboratory operations, IT maintenance, and system troubleshooting for ~30 PC workstations.
           </motion.p>
 
           {/* CTA Buttons */}
           <motion.div
-            className="flex flex-wrap items-center justify-center md:justify-start gap-4 mb-10 w-full md:w-auto"
+            className="flex flex-wrap items-center justify-center md:justify-start gap-4 mb-8 w-full md:w-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
           >
             <button
               onClick={scrollToProjects}
-              className="rounded-full px-7 h-12 bg-primary text-primary-foreground font-semibold flex items-center gap-2 hover:bg-primary/90 transition-all shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:shadow-[0_0_30px_rgba(139,92,246,0.5)] hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
+              className="rounded-xl px-7 h-12 bg-[#2c67ed] text-white font-semibold flex items-center gap-2 hover:bg-[#1d4ed8] transition-all shadow-[0_0_25px_rgba(44,103,237,0.35)] hover:shadow-[0_0_35px_rgba(44,103,237,0.55)] hover:scale-[1.03] active:scale-[0.98] cursor-pointer"
             >
-              <span>View My Projects</span>
+              <span>View Projects</span>
               <ArrowRight className="w-4 h-4" />
             </button>
 
             <button
               onClick={scrollToContact}
-              className="rounded-full px-7 h-12 glass-panel border border-foreground/15 text-foreground font-semibold flex items-center gap-2 hover:border-primary/40 hover:bg-foreground/5 transition-all shadow-md hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
+              className="rounded-xl px-7 h-12 border border-white/15 hover:border-blue-500/50 hover:bg-blue-500/10 text-white font-semibold flex items-center gap-2 transition-all shadow-md hover:scale-[1.03] active:scale-[0.98] cursor-pointer"
             >
-              Let&apos;s Connect
+              Contact Me
             </button>
           </motion.div>
 
-          {/* Social Links */}
+          {/* Social Links with 'Find me' Badge */}
           <motion.div
-            className="flex items-center gap-5 justify-center md:justify-start w-full md:w-auto"
+            className="flex items-center gap-4 justify-center md:justify-start w-full md:w-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.8, duration: 0.8 }}
+            transition={{ delay: 0.75, duration: 0.8 }}
           >
+            <span className="text-xs text-blue-400 tracking-widest uppercase font-semibold mr-1">
+              Find me
+            </span>
             {socialLinks.map(({ icon: Icon, href, label }, idx) => (
               <a
                 key={idx}
@@ -115,9 +170,9 @@ export function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="text-muted-foreground hover:text-primary transition-all hover:-translate-y-1 transform duration-200 p-2 glass-panel rounded-full border border-foreground/10 hover:border-primary/30 shadow-sm"
+                className="p-2.5 rounded-xl border border-white/10 bg-white/[0.03] hover:border-blue-500/40 hover:bg-blue-500/10 text-blue-300 hover:text-white transition-all hover:scale-105 shadow-sm"
               >
-                <Icon className="w-5 h-5" />
+                <Icon className="w-4 h-4" />
               </a>
             ))}
           </motion.div>
@@ -128,7 +183,7 @@ export function Hero() {
           className="flex-1 w-full max-w-md relative flex justify-center items-center py-4 order-1 md:order-2"
           initial={{ opacity: 0, y: -20, filter: "blur(10px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ delay: 0.4, duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ delay: 0.35, duration: 1, ease: [0.16, 1, 0.3, 1] }}
         >
           <LanyardCard
             ropeLength={75}

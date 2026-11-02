@@ -4,27 +4,33 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://zidnirizqia-portofolio.vercel.app"),
-  title: "Zidni Khaerur Rizqia | Informatics Graduate & Software Developer",
+  title: "Zidni Khaerur Rizqia | Informatics Graduate, IT Support & Web Developer",
   description:
-    "Portfolio of Zidni Khaerur Rizqia - Informatics graduate from Universitas Gunadarma with experience in Web Application Development, Computer Vision (YOLOv8, Deep SORT), and software engineering.",
+    "Portfolio of Zidni Khaerur Rizqia, Informatics graduate from Universitas Gunadarma. Hands-on web engineering, computer vision (YOLOv8 & Deep SORT), and IT support & system troubleshooting.",
   keywords: [
     "Zidni Khaerur Rizqia",
     "Portfolio",
     "Informatics",
-    "Gunadarma",
-    "Software Developer",
+    "Universitas Gunadarma",
+    "IT Support",
+    "System Troubleshooting",
+    "Networking",
+    "Cisco",
+    "Web Developer",
     "Computer Vision",
     "YOLOv8",
     "Deep SORT",
     "React",
     "Next.js",
     "TypeScript",
+    "Python",
+    "Jakarta",
   ],
   authors: [{ name: "Zidni Khaerur Rizqia" }],
   openGraph: {
-    title: "Zidni Khaerur Rizqia | Informatics Graduate & Software Developer",
+    title: "Zidni Khaerur Rizqia | Informatics Graduate, IT Support & Web Developer",
     description:
-      "Turning Ideas into Practical Technology — Web Development & Computer Vision Portfolio.",
+      "Portfolio of web engineering, computer vision, and IT support & troubleshooting.",
     url: "https://zidnirizqia-portofolio.vercel.app",
     siteName: "Zidni Khaerur Rizqia Portfolio",
     images: [
@@ -35,14 +41,14 @@ export const metadata: Metadata = {
         alt: "Zidni Khaerur Rizqia - Portfolio",
       },
     ],
-    locale: "id_ID",
+    locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Zidni Khaerur Rizqia | Informatics Graduate & Software Developer",
+    title: "Zidni Khaerur Rizqia | Informatics Graduate, IT Support & Web Developer",
     description:
-      "Turning Ideas into Practical Technology — Web Development & Computer Vision Portfolio.",
+      "Portfolio of web engineering, computer vision, and IT support & troubleshooting.",
     images: ["/og-image.png"],
   },
   icons: { icon: "/profile.png" },
@@ -52,13 +58,13 @@ const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Zidni Khaerur Rizqia",
-  jobTitle: "Software Developer & Informatics Graduate",
+  jobTitle: "Informatics Graduate, IT Support & Web Developer",
   description:
-    "Informatics graduate from Universitas Gunadarma with hands-on experience in web application development and computer vision.",
+    "Portfolio of Zidni Khaerur Rizqia, Informatics graduate from Universitas Gunadarma. Hands-on web engineering, computer vision (YOLOv8 & Deep SORT), and IT support.",
   url: "https://zidnirizqia-portofolio.vercel.app",
   sameAs: [
     "https://github.com/zidnirizqia",
-    "https://www.linkedin.com/in/zidnirizqia"
+    "https://www.linkedin.com/in/zidnirizqia",
   ],
 };
 

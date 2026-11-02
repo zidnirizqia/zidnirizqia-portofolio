@@ -1,12 +1,13 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, FileText } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
+  { name: "Experience", href: "#experience" },
   { name: "Projects", href: "#projects" },
   { name: "Education", href: "#education" },
   { name: "Skills", href: "#skills" },
@@ -23,7 +24,15 @@ export function Navbar() {
       setScrolled(window.scrollY > 120);
 
       // Detect active section
-      const sections = ["home", "about", "projects", "education", "skills", "contact"];
+      const sections = [
+        "home",
+        "about",
+        "experience",
+        "projects",
+        "education",
+        "skills",
+        "contact",
+      ];
       const scrollPos = window.scrollY + 200;
 
       for (const sec of sections) {
@@ -120,7 +129,17 @@ export function Navbar() {
         </nav>
 
         {/* Action Controls */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
+          <a
+            href="/CV_ZidniKhaerurRizqia_ITSupport.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-primary/10 hover:bg-primary/20 text-primary border border-primary/25 text-xs font-bold transition-all hover:scale-105 shadow-sm"
+          >
+            <FileText className="w-3.5 h-3.5" />
+            <span>CV</span>
+          </a>
+
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -134,7 +153,7 @@ export function Navbar() {
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-20 left-4 right-4 glass-panel p-6 rounded-3xl border border-foreground/15 shadow-2xl flex flex-col gap-4 animate-in fade-in slide-in-from-top-4 duration-200">
+        <div className="md:hidden absolute top-20 left-4 right-4 glass-panel p-6 rounded-3xl border border-foreground/15 shadow-2xl flex flex-col gap-3 animate-in fade-in slide-in-from-top-4 duration-200">
           {navLinks.map((link) => (
             <button
               key={link.name}
@@ -149,6 +168,15 @@ export function Navbar() {
               {link.name}
             </button>
           ))}
+          <a
+            href="/CV_ZidniKhaerurRizqia_ITSupport.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-sm font-bold text-white bg-primary hover:bg-primary/90 transition-all shadow-md mt-2"
+          >
+            <FileText className="w-4 h-4" />
+            <span>Download CV (PDF)</span>
+          </a>
         </div>
       )}
     </header>

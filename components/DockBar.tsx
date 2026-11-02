@@ -11,6 +11,7 @@ import {
 import {
   Home,
   User,
+  Briefcase,
   FolderOpen,
   GraduationCap,
   Cpu,
@@ -27,6 +28,7 @@ interface DockItemData {
 const dockItems: DockItemData[] = [
   { icon: Home, label: "Home", href: "#home" },
   { icon: User, label: "About", href: "#about" },
+  { icon: Briefcase, label: "Experience", href: "#experience" },
   { icon: FolderOpen, label: "Projects", href: "#projects" },
   { icon: GraduationCap, label: "Education", href: "#education" },
   { icon: Cpu, label: "Skills", href: "#skills" },
@@ -143,7 +145,7 @@ export function DockBar() {
           exit={{ opacity: 0, y: 50, scale: 0.9 }}
           transition={{ duration: 0.35, ease: "easeOut" }}
           aria-label="Bottom Navigation"
-          className="fixed bottom-4 inset-x-0 mx-auto w-fit z-40 flex items-center justify-center pointer-events-auto select-none"
+          className="fixed bottom-4 inset-x-0 mx-auto w-fit z-40 flex items-center justify-center pointer-events-auto select-none dockbar-container"
         >
           <div
             onMouseMove={(e) => mouseX.set(e.clientX)}

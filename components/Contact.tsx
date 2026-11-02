@@ -16,10 +16,9 @@ export function Contact() {
     e.preventDefault();
     if (!formData.name.trim() || !formData.message.trim()) return;
 
-    // Construct WhatsApp message template as specified in COPYWRITING.md:
-    // Halo Zidni, saya {name}. {message}
-    const whatsappMessage = `Halo Zidni, saya ${formData.name}. ${formData.message}${
-      formData.contact ? ` (Kontak/Email: ${formData.contact})` : ""
+    // Construct WhatsApp message template:
+    const whatsappMessage = `Hi Zidni, I am ${formData.name}. ${formData.message}${
+      formData.contact ? ` (Contact/Email: ${formData.contact})` : ""
     }`;
 
     // Target phone number: +62 817-7913-3277
@@ -65,12 +64,9 @@ export function Contact() {
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4 text-foreground">
                 Let&apos;s <span className="text-gradient-primary">Connect</span>
               </h2>
-              <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
-                I am open to opportunities in Software Engineering, Web
-                Development, Computer Vision, and other technology roles where I
-                can continue learning while contributing to real-world projects.
-                Feel free to reach out for collaboration, technical
-                discussions, or professional opportunities.
+              <p className="text-muted-foreground text-base sm:text-lg leading-relaxed font-light">
+                I am actively seeking internships or full-time opportunities in IT Support, Web
+                Development, or Software Engineering. The fastest way to reach me is via WhatsApp or email.
               </p>
             </div>
 
@@ -97,7 +93,7 @@ export function Contact() {
                 <div>
                   <span className="text-xs text-muted-foreground block">Location</span>
                   <span className="font-semibold text-foreground text-sm sm:text-base">
-                    Jakarta Timur, Indonesia
+                    Jakarta, Indonesia
                   </span>
                 </div>
               </div>
@@ -112,7 +108,7 @@ export function Contact() {
                   <MessageSquare className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <span className="text-xs text-muted-foreground block">Direct Chat</span>
+                  <span className="text-xs text-muted-foreground block">WhatsApp</span>
                   <span className="font-semibold text-foreground text-sm sm:text-base">
                     +62 817-7913-3277
                   </span>
@@ -137,7 +133,7 @@ export function Contact() {
                 <input
                   type="text"
                   required
-                  placeholder="Jane Doe"
+                  placeholder="e.g. Alex Johnson"
                   value={formData.name}
                   onChange={(e) =>
                     setFormData({ ...formData, name: e.target.value })
@@ -148,11 +144,11 @@ export function Contact() {
 
               <div>
                 <label className="block text-xs font-bold uppercase tracking-wider text-muted-foreground mb-2">
-                  Your Email / WhatsApp
+                  Contact / Email
                 </label>
                 <input
                   type="text"
-                  placeholder="name@example.com / 08..."
+                  placeholder="email@example.com / +62..."
                   value={formData.contact}
                   onChange={(e) =>
                     setFormData({ ...formData, contact: e.target.value })
@@ -168,7 +164,7 @@ export function Contact() {
                 <textarea
                   required
                   rows={4}
-                  placeholder="Tell me about your project or opportunity..."
+                  placeholder="Tell me about your job opportunity, project, or collaboration..."
                   value={formData.message}
                   onChange={(e) =>
                     setFormData({ ...formData, message: e.target.value })
@@ -188,7 +184,7 @@ export function Contact() {
                   </>
                 ) : (
                   <>
-                    <span>Send Message</span>
+                    <span>Send via WhatsApp</span>
                     <Send className="w-4 h-4" />
                   </>
                 )}

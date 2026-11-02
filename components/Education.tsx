@@ -6,12 +6,13 @@ import { GraduationCap, Award, Calendar, BookOpen, CheckCircle2, MapPin } from "
 import { MagicCard } from "./MagicCard";
 
 const focusAreas = [
-  "Software and web application development",
-  "Algorithms and programming",
-  "Computer vision and image processing",
-  "Artificial intelligence and applied machine learning",
-  "Database and information-system fundamentals",
-  "Technical research, testing, and documentation",
+  "Full-stack web application engineering",
+  "Algorithms, data structures & software design",
+  "Computer vision & digital image processing",
+  "Applied artificial intelligence & machine learning",
+  "Relational database design & information systems",
+  "Software engineering lifecycle, testing & technical writing",
+  "Computer networking & infrastructure (Cisco LAN/WAN, WLAN)",
 ];
 
 export function Education() {
@@ -33,8 +34,8 @@ export function Education() {
             Academic <span className="text-gradient-primary">Background</span>
           </h2>
         </div>
-        <p className="text-muted-foreground text-base sm:text-lg max-w-2xl">
-          Academic foundation in Informatics, software development, and applied computing
+        <p className="text-muted-foreground text-base sm:text-lg max-w-2xl font-light">
+          Academic foundations in Informatics, software engineering, and applied computing.
         </p>
       </motion.div>
 
@@ -61,16 +62,16 @@ export function Education() {
                 </div>
                 <span className="px-3.5 py-1.5 rounded-full border text-xs font-extrabold flex items-center gap-1.5 shadow-sm text-emerald-400 bg-emerald-500/10 border-emerald-500/30">
                   <Award className="w-3.5 h-3.5" />
-                  IPK 3.69/4.00
+                  GPA 3.69 / 4.00
                 </span>
               </div>
 
               <div>
                 <h3 className="text-2xl md:text-3xl font-extrabold text-foreground tracking-tight mb-2">
-                  Sarjana Komputer (S.Kom.)
+                  Bachelor of Computer Science (S.Kom.)
                 </h3>
                 <p className="text-primary font-bold text-base mb-4">
-                  Informatics Major
+                  Informatics Engineering Major
                 </p>
 
                 <div className="flex flex-col gap-2.5 text-xs sm:text-sm font-semibold text-muted-foreground">
@@ -80,7 +81,7 @@ export function Education() {
                   </span>
                   <span className="flex items-center gap-2">
                     <Calendar className="w-4 h-4 text-primary" />
-                    Period: 2022 – 2026
+                    September 2022 – August 2026
                   </span>
                   <span className="flex items-center gap-2">
                     <BookOpen className="w-4 h-4 text-primary" />
@@ -93,7 +94,7 @@ export function Education() {
             {/* Right Column: Focus Areas & Key Competencies */}
             <div className="flex flex-col justify-center">
               <h4 className="text-sm font-bold uppercase tracking-wider text-muted-foreground mb-4">
-                Key Academic Competencies &amp; Focus Areas
+                Academic Focus &amp; Core Competencies
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 {focusAreas.map((area, idx) => (

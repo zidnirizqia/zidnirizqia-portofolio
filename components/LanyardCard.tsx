@@ -328,18 +328,18 @@ export function LanyardCard({
                   Zidni Khaerur Rizqia
                 </h3>
                 <div className="inline-flex items-center gap-1 mt-1 px-3 py-0.5 rounded-full bg-primary/10 border border-primary/30 text-primary text-xs font-semibold">
-                  <span>Informatics Graduate & Software Developer</span>
+                  <span>Informatics Graduate · IT Support &amp; Web Development</span>
                 </div>
               </div>
 
               {/* Specialty */}
               <div className="w-full text-left bg-muted/40 p-3 rounded-xl border border-border/50">
                 <span className="text-muted-foreground block text-[9px] uppercase tracking-widest font-bold mb-1.5">
-                  Specialty
+                  Focus Areas
                 </span>
                 <div className="flex flex-col gap-0">
                   <span className="px-2.5 py-1 rounded-lg bg-primary/10 text-primary text-[10px] font-extrabold uppercase tracking-wide text-center">
-                    WEB DEVELOPMENT · COMPUTER VISION · SOFTWARE PROJECTS
+                    IT SUPPORT · WEB DEVELOPMENT · COMPUTER VISION
                   </span>
                 </div>
               </div>
@@ -351,7 +351,7 @@ export function LanyardCard({
                     Location
                   </span>
                   <span className="font-bold text-foreground text-xs whitespace-nowrap">
-                    Jakarta Timur
+                    Jakarta, ID
                   </span>
                 </div>
                 <div className="text-center px-1">
@@ -367,7 +367,7 @@ export function LanyardCard({
                     Status
                   </span>
                   <span className="font-bold text-emerald-500 text-xs flex items-center justify-center gap-1">
-                    ● Open
+                    ● Available
                   </span>
                 </div>
               </div>
