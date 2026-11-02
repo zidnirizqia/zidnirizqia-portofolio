@@ -140,8 +140,9 @@ export function AboutIntro() {
             className="min-w-0 space-y-6 text-left"
           >
             <h2 className="font-display text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-tight">
-              <span className="grad-vi block">About</span>
-              <span className="block text-foreground mt-1 whitespace-nowrap">Me</span>
+              <span className="grad-vi block">Hi, I&apos;m</span>
+              <span className="block text-foreground mt-1 whitespace-nowrap">Zidni Khaerur</span>
+              <span className="block text-foreground whitespace-nowrap">Rizqia</span>
             </h2>
 
             <div className="mt-8">
@@ -177,25 +178,18 @@ export function AboutIntro() {
             className="min-w-0 space-y-6 text-left"
           >
             <h3 className="font-display text-xl font-bold text-foreground tracking-tight">
-              Web systems, computer vision, and <span className="text-[#2c67ed]">IT support</span>
+              Building <span className="text-[#2c67ed]">Practical Software</span> through Development &amp; Experimentation
             </h3>
             <div className="text-base sm:text-lg leading-relaxed space-y-3 font-light text-v3-muted">
               <p>
-                I graduated with a Bachelor of Computer Science in Informatics from
-                Universitas Gunadarma in 2026 (GPA 3.69 / 4.00). From September 2024
-                to July 2026, I worked as a Programmer and IT Support Specialist at
-                the Intermediate Accounting Laboratory (Labamen), maintaining and
-                troubleshooting ~30 lab PCs while leading practical lab sessions
-                for cohorts of ~30 students.
+                I am an Informatics graduate from Universitas Gunadarma with
+                experience in software development and applied technology
+                projects. My work spans web-based systems and computer vision.
               </p>
               <p>
-                My core work includes a food ordering website with a customer
-                loyalty points system for Mie Ayam Mas Jo (PHP, MySQL, Midtrans
-                QRIS, achieving a 92.6% user acceptance rate in UAT across 15
-                respondents) and an automated vehicle detection, tracking, and
-                counting pipeline using YOLOv8 and Deep SORT (~98% counting
-                accuracy on test footage). I also completed Cisco networking (LAN &amp;
-                WAN) and AWS Cloud foundational training.
+                I developed a food-ordering website for Mie Ayam Mas Jo with a
+                loyalty point system and worked on vehicle detection, tracking,
+                and counting using YOLOv8 and Deep SORT.
               </p>
             </div>
 
@@ -226,30 +220,18 @@ export function AboutIntro() {
           </div>
 
           <h2 className="font-display text-4xl sm:text-5xl font-bold tracking-tight leading-tight text-left w-full">
-            <span className="grad-vi block">About</span>
-            <span className="block text-foreground mt-1">Me</span>
+            <span className="grad-vi block">Hi, I&apos;m</span>
+            <span className="block text-foreground mt-1">Zidni Khaerur Rizqia</span>
           </h2>
 
-          <div className="text-base sm:text-lg leading-relaxed text-left w-full space-y-3 font-light text-v3-muted">
-            <p className="font-semibold text-foreground">
-              Web systems, computer vision, and IT support
+          <div className="text-base sm:text-lg leading-relaxed text-left w-full space-y-2 font-light text-v3-muted">
+            <p>
+              Building <strong>Practical Software</strong> through Development, Experimentation, and Technology.
             </p>
             <p>
-              I graduated with a Bachelor of Computer Science in Informatics from
-              Universitas Gunadarma in 2026 (GPA 3.69 / 4.00). From September 2024
-              to July 2026, I worked as a Programmer and IT Support Specialist at
-              the Intermediate Accounting Laboratory (Labamen), maintaining and
-              troubleshooting ~30 lab PCs while leading practical lab sessions
-              for cohorts of ~30 students.
-            </p>
-            <p>
-              My core work includes a food ordering website with a customer
-              loyalty points system for Mie Ayam Mas Jo (PHP, MySQL, Midtrans
-              QRIS, achieving a 92.6% user acceptance rate in UAT across 15
-              respondents) and an automated vehicle detection, tracking, and
-              counting pipeline using YOLOv8 and Deep SORT (~98% counting
-              accuracy on test footage). I also completed Cisco networking (LAN &amp;
-              WAN) and AWS Cloud foundational training.
+              Informatics graduate from Universitas Gunadarma experienced in web
+              application engineering, food ordering systems with customer
+              loyalty, and YOLOv8 computer vision pipelines.
             </p>
           </div>
 
