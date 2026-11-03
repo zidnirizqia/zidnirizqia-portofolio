@@ -51,7 +51,18 @@ export const metadata: Metadata = {
       "Portfolio of web engineering, computer vision, and IT support & troubleshooting.",
     images: ["/og-image.png"],
   },
-  icons: { icon: "/profile.png" },
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon-32x32.png", type: "image/png", sizes: "32x32" },
+      { url: "/icon-192x192.png", type: "image/png", sizes: "192x192" },
+      { url: "/icon-512x512.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
 };
 
 const personJsonLd = {
