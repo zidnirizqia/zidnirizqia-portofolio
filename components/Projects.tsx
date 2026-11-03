@@ -592,27 +592,17 @@ export function Projects() {
             </AnimatePresence>
           </div>
 
-          {/* More Projects Button */}
-          <div className="mt-12 flex justify-center">
-            {projects.length > 3 ? (
+          {/* Show More Button for Projects */}
+          {projects.length > 3 && (
+            <div className="mt-12 flex justify-center">
               <button
                 onClick={() => setShowAllProjects(!showAllProjects)}
                 className="px-6 py-2.5 rounded-full bg-[#111c38] hover:bg-blue-900/50 text-blue-300 border border-blue-500/20 text-sm font-bold transition-all hover:shadow-[0_0_15px_rgba(29,78,216,0.3)] cursor-pointer"
               >
                 {showAllProjects ? "Show Less" : "More"}
               </button>
-            ) : (
-              <a
-                href="https://github.com/zidnirizqia?tab=repositories"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#111c38] hover:bg-blue-900/50 text-blue-300 border border-blue-500/20 text-sm font-bold transition-all hover:shadow-[0_0_15px_rgba(29,78,216,0.3)] cursor-pointer"
-              >
-                <span>More</span>
-                <ExternalLink className="w-3.5 h-3.5" />
-              </a>
-            )}
-          </div>
+            </div>
+          )}
         </>
       ) : (
         /* CERTIFICATES VIEW */
