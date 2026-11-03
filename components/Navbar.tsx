@@ -131,7 +131,7 @@ export function Navbar() {
         {/* Action Controls */}
         <div className="flex items-center gap-3">
           <a
-            href="/CV_ZidniKhaerurRizqia_ITSupport.pdf"
+            href="https://drive.google.com/file/d/1RiZeBxz74RxjJTB8nwvzO1dMFxcDwp06/view?usp=drive_link"
             target="_blank"
             rel="noopener noreferrer"
             className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-primary/10 hover:bg-primary/20 text-primary border border-primary/25 text-xs font-bold transition-all hover:scale-105 shadow-sm"
@@ -169,7 +169,7 @@ export function Navbar() {
             </button>
           ))}
           <a
-            href="/CV_ZidniKhaerurRizqia_ITSupport.pdf"
+            href="https://drive.google.com/file/d/1RiZeBxz74RxjJTB8nwvzO1dMFxcDwp06/view?usp=drive_link"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-sm font-bold text-white bg-primary hover:bg-primary/90 transition-all shadow-md mt-2"

@@ -112,7 +112,8 @@ function InteractiveProfile() {
   );
 }
 
-const resumeHref = "/CV_ZidniKhaerurRizqia_ITSupport.pdf";
+const resumeHref =
+  "https://drive.google.com/file/d/1RiZeBxz74RxjJTB8nwvzO1dMFxcDwp06/view?usp=drive_link";
 
 export function AboutIntro() {
   const scrollToProjects = (e: React.MouseEvent) => {
