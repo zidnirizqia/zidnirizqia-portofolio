@@ -3,7 +3,7 @@
 import React, { useRef, useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+
 
 const galleryPhotos = [
   { id: 1, src: "/projects/skripsi-annotated-video.png", title: "Automated Vehicle Tracking", subtitle: "YOLOv8 + Deep SORT Pipeline" },
@@ -252,28 +252,6 @@ export function PhotoGallery() {
           </div>
         </div>
 
-        {/* Carousel Navigation Buttons */}
-        <div className="flex items-center gap-3 mt-4 z-20">
-          <button
-            type="button"
-            onClick={() => animateTo(Math.round(targetPos.current) - 1)}
-            className="p-3 rounded-full bg-white/5 border border-white/10 text-white hover:bg-blue-600/30 hover:border-blue-500/40 transition-all hover:scale-110 active:scale-95 cursor-pointer"
-            aria-label="Previous slide"
-          >
-            <ChevronLeft className="w-5 h-5" />
-          </button>
-          <span className="text-xs font-mono text-zinc-400">
-            {activeIndex + 1} / {count}
-          </span>
-          <button
-            type="button"
-            onClick={() => animateTo(Math.round(targetPos.current) + 1)}
-            className="p-3 rounded-full bg-white/5 border border-white/10 text-white hover:bg-blue-600/30 hover:border-blue-500/40 transition-all hover:scale-110 active:scale-95 cursor-pointer"
-            aria-label="Next slide"
-          >
-            <ChevronRight className="w-5 h-5" />
-          </button>
-        </div>
       </div>
     </section>
   );
