@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { GraduationCap, Briefcase } from "lucide-react";
 
 export function Experience() {
   return (
@@ -24,9 +24,15 @@ export function Experience() {
               Education
             </h3>
             <div className="space-y-4">
-              <div className="rounded-2xl px-6 py-5 flex items-center gap-4 bg-slate-800/40 hover:bg-slate-800/70 border border-white/10 transition-colors duration-200">
-                <div className="w-14 h-14 flex-shrink-0 relative rounded-2xl overflow-hidden bg-blue-500/10 border border-blue-500/20 flex items-center justify-center">
-                  <GraduationCap className="w-7 h-7 text-blue-400" />
+              <div className="group rounded-2xl px-6 py-5 flex items-center gap-4 bg-slate-800/40 hover:bg-slate-800/70 border border-white/10 transition-colors duration-200">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 flex-shrink-0 relative rounded-2xl overflow-hidden bg-white/5 border border-white/10 flex items-center justify-center p-2 shadow-sm">
+                  <Image
+                    src="/images/gunadarma-logo.png"
+                    alt="Universitas Gunadarma Logo"
+                    width={64}
+                    height={64}
+                    className="object-contain w-full h-full group-hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
                 <div className="min-w-0 flex-1">
                   <p className="text-base font-semibold text-white leading-snug">
@@ -54,9 +60,15 @@ export function Experience() {
               Experience
             </h3>
             <div className="space-y-4">
-              <div className="rounded-2xl px-6 py-5 flex items-center gap-4 bg-slate-800/40 hover:bg-slate-800/70 border border-white/10 transition-colors duration-200">
-                <div className="w-14 h-14 flex-shrink-0 relative rounded-2xl overflow-hidden bg-blue-500/10 border border-blue-500/20 flex items-center justify-center">
-                  <Briefcase className="w-7 h-7 text-blue-400" />
+              <div className="group rounded-2xl px-6 py-5 flex items-center gap-4 bg-slate-800/40 hover:bg-slate-800/70 border border-white/10 transition-colors duration-200">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 flex-shrink-0 relative rounded-2xl overflow-hidden bg-white border border-white/20 flex items-center justify-center p-2 shadow-sm">
+                  <Image
+                    src="/images/labamen-logo.png"
+                    alt="Laboratorium Akuntansi Menengah Logo"
+                    width={64}
+                    height={64}
+                    className="object-contain w-full h-full group-hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
                 <div className="min-w-0 flex-1">
                   <p className="text-base font-semibold text-white leading-snug">
