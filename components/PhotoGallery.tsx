@@ -6,12 +6,42 @@ import { motion } from "framer-motion";
 
 
 const galleryPhotos = [
-  { id: 1, src: "/projects/skripsi-annotated-video.png", title: "Automated Vehicle Tracking", subtitle: "YOLOv8 + Deep SORT Pipeline" },
-  { id: 2, src: "/projects/pi-masjo-thumb.png", title: "Mie Ayam Mas Jo Website", subtitle: "Online Ordering & Customer Loyalty System" },
-  { id: 3, src: "/projects/jumantik-preview.png", title: "Jumantik Information System", subtitle: "GPS Geotagging & Public Health AI" },
-  { id: 4, src: "/projects/pi-masjo-admin-dashboard.png", title: "Admin & Analytics Dashboard", subtitle: "SMB Sales & Inventory Insights" },
-  { id: 5, src: "/projects/skripsi-tracking-system.png", title: "Directional Line Crossing", subtitle: "Flask Web UI & Real-Time Traffic Counter" },
-  { id: 6, src: "/projects/jumantik-docs-architecture.svg", title: "Software Architecture Map", subtitle: "IEEE Technical Documentation (SRS, SDD)" },
+  {
+    id: 1,
+    src: "/gallery/labamen-big-family.jpg",
+    title: "Labamen Big Family",
+    subtitle: "Laboratory Staff & Assistant Cohort",
+  },
+  {
+    id: 2,
+    src: "/gallery/labamen-it-team.jpg",
+    title: "Technical IT Support Team",
+    subtitle: "Labamen Laboratory Assistants",
+  },
+  {
+    id: 3,
+    src: "/gallery/lab-practical-session-1.jpg",
+    title: "Hands-on Practical Lab",
+    subtitle: "Mentoring Cohorts & Managing ~30 PCs",
+  },
+  {
+    id: 4,
+    src: "/gallery/lab-practical-session-2.jpg",
+    title: "Computer Laboratory",
+    subtitle: "Active Student Practical Session",
+  },
+  {
+    id: 5,
+    src: "/gallery/lab-instruction-session.jpg",
+    title: "Practical Lab Supervision",
+    subtitle: "Interactive Accounting & System Modules",
+  },
+  {
+    id: 6,
+    src: "/gallery/lab-workstations-setup.jpg",
+    title: "Workstation Maintenance",
+    subtitle: "Hardware, Software & Network Readiness",
+  },
 ];
 
 export function PhotoGallery() {
