@@ -141,9 +141,8 @@ export function AboutIntro() {
             className="min-w-0 space-y-6 text-left"
           >
             <h2 className="font-display text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-tight">
-              <span className="grad-vi block">Hi, I&apos;m</span>
-              <span className="block text-foreground mt-1 whitespace-nowrap">Zidni Khaerur</span>
-              <span className="block text-foreground whitespace-nowrap">Rizqia</span>
+              <span className="grad-vi block">About</span>
+              <span className="block text-foreground mt-1 whitespace-nowrap">Me</span>
             </h2>
 
             <div className="mt-8">
@@ -221,8 +220,8 @@ export function AboutIntro() {
           </div>
 
           <h2 className="font-display text-4xl sm:text-5xl font-bold tracking-tight leading-tight text-left w-full">
-            <span className="grad-vi block">Hi, I&apos;m</span>
-            <span className="block text-foreground mt-1">Zidni Khaerur Rizqia</span>
+            <span className="grad-vi block">About</span>
+            <span className="block text-foreground mt-1">Me</span>
           </h2>
 
           <div className="text-base sm:text-lg leading-relaxed text-left w-full space-y-2 font-light text-v3-muted">
