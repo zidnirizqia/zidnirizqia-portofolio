@@ -127,7 +127,7 @@ export function AboutIntro() {
   return (
     <section
       id="about"
-      className="v3-scope h-auto pb-20 text-foreground relative px-[5%] sm:px-[5%] lg:px-[10%] mt-24 sm:mt-28"
+      className="v3-scope h-auto pb-10 text-foreground relative px-[5%] sm:px-[5%] lg:px-[10%] mt-10 sm:mt-14"
     >
       <div className="w-full mx-auto relative">
         {/* Top 3-Column Layout on Desktop with Staggered Scroll Reveal */}

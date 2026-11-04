@@ -18,7 +18,7 @@ const focusAreas = [
 
 export function Education() {
   return (
-    <section id="education" className="max-w-7xl mx-auto px-6 py-24 sm:py-32">
+    <section id="education" className="max-w-7xl mx-auto px-6 py-14 sm:py-20">
       {/* Section Header */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}

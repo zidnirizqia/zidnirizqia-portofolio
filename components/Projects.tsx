@@ -454,7 +454,7 @@ export function Projects() {
     : certificates.slice(0, 6);
 
   return (
-    <section id="projects" className="w-full max-w-7xl mx-auto px-6 py-24 sm:py-32">
+    <section id="projects" className="w-full max-w-7xl mx-auto px-6 py-14 sm:py-20">
       {/* Header with Smooth Scroll Reveal */}
       <motion.div
         initial={{ opacity: 0, y: 35 }}

@@ -9,7 +9,7 @@ export function Experience() {
     <section
       id="experience"
       aria-label="Education and Experience"
-      className="v3-scope pb-20 text-foreground relative px-[5%] sm:px-[5%] lg:px-[10%]"
+      className="v3-scope pb-10 text-foreground relative px-[5%] sm:px-[5%] lg:px-[10%]"
     >
       <div className="w-full mx-auto relative">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">

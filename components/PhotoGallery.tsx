@@ -202,7 +202,7 @@ export function PhotoGallery() {
   }, [updateTransforms]);
 
   return (
-    <section className="v3-scope py-16 md:py-24 overflow-hidden relative" id="gallery">
+    <section className="v3-scope py-12 md:py-16 overflow-hidden relative" id="gallery">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
