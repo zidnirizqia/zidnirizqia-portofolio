@@ -9,9 +9,9 @@ import { LanyardCard } from "./LanyardCard";
 
 const typewriterTitles = [
   "Informatics Graduate",
-  "Software & Web Developer",
-  "Computer Vision Specialist",
-  "IT Support & Network Engineer",
+  "IT Support & Web Developer",
+  "Tech Enthusiast",
+  "Vibe Coder",
 ];
 
 function Typewriter() {
