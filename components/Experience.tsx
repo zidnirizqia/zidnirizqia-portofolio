@@ -2,63 +2,78 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Briefcase, Calendar } from "lucide-react";
-import { experienceData } from "@/data/experience";
+import { GraduationCap, Briefcase } from "lucide-react";
 
 export function Experience() {
-  const { sectionTitle, experience } = experienceData;
-
   return (
     <section
       id="experience"
-      aria-labelledby="experience-heading"
-      className="max-w-7xl mx-auto px-6 py-16 sm:py-20"
+      aria-label="Education and Experience"
+      className="v3-scope pb-20 text-foreground relative px-[5%] sm:px-[5%] lg:px-[10%]"
     >
-      {/* Section Header */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
-        className="mb-8"
-      >
-        <div className="flex items-center gap-3.5">
-          <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/25 flex items-center justify-center text-primary shadow-sm">
-            <Briefcase className="w-5 h-5" />
-          </div>
-          <h2
-            id="experience-heading"
-            className="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground"
+      <div className="w-full mx-auto relative">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          {/* Education Column */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
-            {sectionTitle}
-          </h2>
-        </div>
-      </motion.div>
-
-      {/* Compact Experience Card */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.1 }}
-        className="glass-panel px-6 py-6 sm:px-8 sm:py-7 rounded-2xl border border-border/80 bg-card/60 shadow-lg relative overflow-hidden"
-      >
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 relative z-10">
-          <div>
-            <h3 className="text-xl sm:text-2xl font-bold text-foreground tracking-tight">
-              {experience.role}
+            <h3 className="font-display text-xl font-bold text-white mb-5">
+              Education
             </h3>
-            <p className="text-muted-foreground text-sm sm:text-base font-medium mt-1">
-              {experience.organization}
-            </p>
-          </div>
+            <div className="space-y-4">
+              <div className="rounded-2xl px-6 py-5 flex items-center gap-4 bg-slate-800/40 hover:bg-slate-800/70 border border-white/10 transition-colors duration-200">
+                <div className="w-14 h-14 flex-shrink-0 relative rounded-2xl overflow-hidden bg-blue-500/10 border border-blue-500/20 flex items-center justify-center">
+                  <GraduationCap className="w-7 h-7 text-blue-400" />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <p className="text-base font-semibold text-white leading-snug">
+                    Universitas Gunadarma
+                  </p>
+                  <p className="text-sm mt-0.5 text-v3-muted">
+                    Informatics | Faculty of Industrial Technology
+                  </p>
+                  <p className="text-sm mt-1 font-medium text-blue-300">
+                    2022 – 2026
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
 
-          <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold text-primary/90 bg-primary/10 px-4 py-2 rounded-xl border border-primary/20 w-fit shrink-0">
-            <Calendar className="w-4 h-4" />
-            <span>{experience.period}</span>
-          </div>
+          {/* Experience Column */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <h3 className="font-display text-xl font-bold text-white mb-5">
+              Experience
+            </h3>
+            <div className="space-y-4">
+              <div className="rounded-2xl px-6 py-5 flex items-center gap-4 bg-slate-800/40 hover:bg-slate-800/70 border border-white/10 transition-colors duration-200">
+                <div className="w-14 h-14 flex-shrink-0 relative rounded-2xl overflow-hidden bg-blue-500/10 border border-blue-500/20 flex items-center justify-center">
+                  <Briefcase className="w-7 h-7 text-blue-400" />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <p className="text-base font-semibold text-white leading-snug">
+                    Laboratorium Akuntansi Menengah
+                  </p>
+                  <p className="text-sm mt-0.5 text-v3-muted">
+                    Programmer
+                  </p>
+                  <p className="text-sm mt-1 font-medium text-blue-300">
+                    2024 – 2026
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }
