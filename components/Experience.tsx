@@ -25,13 +25,13 @@ export function Experience() {
             </h3>
             <div className="space-y-4">
               <div className="group rounded-2xl px-6 py-5 flex items-center gap-4 bg-slate-800/40 hover:bg-slate-800/70 border border-white/10 transition-colors duration-200">
-                <div className="w-14 h-14 sm:w-16 sm:h-16 flex-shrink-0 relative rounded-2xl overflow-hidden bg-white/5 border border-white/10 flex items-center justify-center p-2 shadow-sm">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 relative flex items-center justify-center">
                   <Image
                     src="/images/gunadarma-logo.png"
                     alt="Universitas Gunadarma Logo"
-                    width={64}
-                    height={64}
-                    className="object-contain w-full h-full group-hover:scale-105 transition-transform duration-300"
+                    width={56}
+                    height={56}
+                    className="object-contain max-h-full max-w-full group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
                 <div className="min-w-0 flex-1">
@@ -61,13 +61,13 @@ export function Experience() {
             </h3>
             <div className="space-y-4">
               <div className="group rounded-2xl px-6 py-5 flex items-center gap-4 bg-slate-800/40 hover:bg-slate-800/70 border border-white/10 transition-colors duration-200">
-                <div className="w-14 h-14 sm:w-16 sm:h-16 flex-shrink-0 relative rounded-2xl overflow-hidden bg-white border border-white/20 flex items-center justify-center p-2 shadow-sm">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 relative flex items-center justify-center">
                   <Image
-                    src="/images/labamen-logo.png"
+                    src="/images/labamen-logo-transparent.png"
                     alt="Laboratorium Akuntansi Menengah Logo"
-                    width={64}
-                    height={64}
-                    className="object-contain w-full h-full group-hover:scale-105 transition-transform duration-300"
+                    width={56}
+                    height={56}
+                    className="object-contain max-h-full max-w-full group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
                 <div className="min-w-0 flex-1">

@@ -58,13 +58,13 @@ export function Education() {
             {/* Left Column: Degree & Institution Meta */}
             <div className="flex flex-col gap-6 lg:border-r lg:border-border/60 lg:pr-10">
               <div className="flex items-start justify-between gap-4">
-                <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center p-2 shadow-sm">
+                <div className="w-14 h-14 flex items-center justify-center relative flex-shrink-0">
                   <Image
                     src="/images/gunadarma-logo.png"
                     alt="Universitas Gunadarma Logo"
                     width={56}
                     height={56}
-                    className="object-contain w-full h-full"
+                    className="object-contain max-h-full max-w-full"
                   />
                 </div>
                 <span className="px-3.5 py-1.5 rounded-full border text-xs font-extrabold flex items-center gap-1.5 shadow-sm text-emerald-400 bg-emerald-500/10 border-emerald-500/30">
